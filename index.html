@@ -1,0 +1,3525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#f5e9ec"
+  >
+
+  <title>Mis XV Años | Iveth Mejía</title>
+
+  <!-- GOOGLE FONTS -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <style>
+
+    /* ==============================
+       VARIABLES
+    ============================== */
+
+    :root {
+
+      --rosa: #d6a0ad;
+      --rosa-claro: #f8ecef;
+      --rosa-suave: #ead3d9;
+
+      --vino: #754452;
+      --vino-oscuro: #55313a;
+
+      --dorado: #c4a16b;
+      --dorado-claro: #e3c99e;
+
+      --blanco: #fffdfd;
+      --texto: #493f42;
+      --gris: #817579;
+
+    }
+
+
+    /* ==============================
+       RESET
+    ============================== */
+
+    * {
+
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+
+    body {
+
+      font-family: "Montserrat", sans-serif;
+
+      background:
+        radial-gradient(
+          circle at top left,
+          #fff7f8,
+          transparent 35%
+        ),
+        linear-gradient(
+          180deg,
+          #fffdfd,
+          #f9eff1
+        );
+
+      color: var(--texto);
+
+      overflow-x: hidden;
+
+    }
+
+
+    body.no-scroll {
+
+      overflow: hidden;
+
+    }
+
+
+    a {
+
+      text-decoration: none;
+      color: inherit;
+
+    }
+
+
+    button {
+
+      font-family: inherit;
+
+    }
+
+
+
+    /* ==============================
+       PANTALLA INICIAL
+    ============================== */
+
+    .intro {
+
+      position: fixed;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100dvh;
+
+      z-index: 9999;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      background:
+
+        linear-gradient(
+          rgba(62, 33, 42, .78),
+          rgba(62, 33, 42, .92)
+        ),
+
+        radial-gradient(
+          circle at center,
+          #d6a0ad,
+          #754452
+        );
+
+      transition:
+        opacity 1s ease,
+        visibility 1s ease,
+        transform 1s ease;
+
+    }
+
+
+    .intro::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 20px;
+
+      border: 1px solid rgba(255,255,255,.3);
+
+      pointer-events: none;
+
+    }
+
+
+    .intro.ocultar {
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transform: scale(1.05);
+
+    }
+
+
+    .intro-content {
+
+      width: min(90%, 540px);
+
+      padding: 40px 25px;
+
+      position: relative;
+
+      z-index: 2;
+
+      color: white;
+
+      animation: aparecer 1.3s ease;
+
+    }
+
+
+    .intro-small {
+
+      font-size: .73rem;
+
+      letter-spacing: 5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 22px;
+
+      opacity: .88;
+
+    }
+
+
+    .intro h1 {
+
+      font-family: "Great Vibes", cursive;
+
+      font-size: clamp(4rem, 15vw, 8rem);
+
+      line-height: .85;
+
+      font-weight: 400;
+
+    }
+
+
+    .intro h2 {
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(.9rem, 3vw, 1.2rem);
+
+      font-weight: 400;
+
+      letter-spacing: 7px;
+
+      text-transform: uppercase;
+
+      margin-top: 25px;
+
+    }
+
+
+    .intro-line {
+
+      width: 65px;
+      height: 1px;
+
+      background: rgba(255,255,255,.8);
+
+      margin: 30px auto;
+
+    }
+
+
+    .open-btn {
+
+      border: 1px solid rgba(255,255,255,.85);
+
+      color: white;
+
+      padding: 15px 32px;
+
+      border-radius: 100px;
+
+      background: rgba(255,255,255,.08);
+
+      backdrop-filter: blur(10px);
+
+      letter-spacing: 2px;
+
+      font-size: .75rem;
+
+      cursor: pointer;
+
+      transition: .35s ease;
+
+    }
+
+
+    .open-btn:hover {
+
+      background: white;
+
+      color: var(--vino);
+
+      transform: translateY(-3px);
+
+    }
+
+
+
+    /* ==============================
+       BOTÓN MÚSICA
+    ============================== */
+
+    .music-btn {
+
+      position: fixed;
+
+      right: 18px;
+      bottom: 18px;
+
+      z-index: 500;
+
+      width: 52px;
+      height: 52px;
+
+      border-radius: 50%;
+
+      border: none;
+
+      background: rgba(117,68,82,.94);
+
+      color: white;
+
+      font-size: 18px;
+
+      cursor: pointer;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,.18);
+
+    }
+
+
+    .music-btn.playing {
+
+      animation: pulso 2s infinite;
+
+    }
+
+
+
+    /* ==============================
+       HERO
+    ============================== */
+
+    .hero {
+
+      min-height: 100dvh;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      justify-content: center;
+
+      position: relative;
+
+      overflow: hidden;
+
+      text-align: center;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          rgba(117,68,82,.25),
+          rgba(117,68,82,.55),
+          rgba(62,31,40,.95)
+        );
+
+    }
+
+
+    .hero::before {
+
+      content: "AQUÍ IRÁ LA FOTO PRINCIPAL";
+
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      padding-bottom: 180px;
+
+      color: rgba(255,255,255,.48);
+
+      font-size: clamp(.85rem, 2vw, 1.1rem);
+
+      letter-spacing: 4px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 20px;
+
+      border: 1px solid rgba(255,255,255,.2);
+
+    }
+
+
+    .hero-content {
+
+      width: 100%;
+
+      padding:
+        100px
+        20px
+        60px;
+
+      position: relative;
+
+      z-index: 2;
+
+      color: white;
+
+    }
+
+
+    .hero-kicker {
+
+      font-size: .72rem;
+
+      letter-spacing: 6px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 17px;
+
+    }
+
+
+    .hero h1 {
+
+      font-family: "Great Vibes", cursive;
+
+      font-size: clamp(4.7rem, 16vw, 10rem);
+
+      line-height: .82;
+
+      font-weight: 400;
+
+      text-shadow:
+        0 8px 35px rgba(0,0,0,.2);
+
+    }
+
+
+    .hero-date {
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(.9rem, 4vw, 1.3rem);
+
+      letter-spacing: 5px;
+
+      margin-top: 27px;
+
+    }
+
+
+    .scroll-indicator {
+
+      margin-top: 34px;
+
+      display: inline-flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 8px;
+
+      font-size: .63rem;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      opacity: .8;
+
+    }
+
+
+    .scroll-line {
+
+      width: 1px;
+      height: 40px;
+
+      background: white;
+
+      animation: scrollAnim 1.8s infinite;
+
+    }
+
+
+
+    /* ==============================
+       GENERALES
+    ============================== */
+
+    section {
+
+      position: relative;
+
+      padding: 100px 20px;
+
+    }
+
+
+    .container {
+
+      width: min(1080px, 100%);
+
+      margin-inline: auto;
+
+    }
+
+
+    .section-mini {
+
+      text-align: center;
+
+      text-transform: uppercase;
+
+      font-size: .69rem;
+
+      letter-spacing: 5px;
+
+      color: var(--dorado);
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .section-title {
+
+      text-align: center;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(2rem, 6vw, 3.6rem);
+
+      font-weight: 500;
+
+      color: var(--vino);
+
+      margin-bottom: 25px;
+
+    }
+
+
+    .script-title {
+
+      font-family: "Great Vibes", cursive;
+
+      font-size: clamp(3.8rem, 11vw, 6rem);
+
+      font-weight: 400;
+
+      text-align: center;
+
+      color: var(--vino);
+
+      line-height: 1;
+
+    }
+
+
+    .divider {
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 12px;
+
+      margin: 20px auto 32px;
+
+    }
+
+
+    .divider span {
+
+      width: 50px;
+      height: 1px;
+
+      background: var(--dorado);
+
+    }
+
+
+    .divider i {
+
+      font-style: normal;
+
+      color: var(--dorado);
+
+    }
+
+
+
+    /* ==============================
+       MENSAJE
+    ============================== */
+
+    .message {
+
+      text-align: center;
+
+      background: var(--blanco);
+
+    }
+
+
+    .message p {
+
+      max-width: 720px;
+
+      margin: auto;
+
+      font-family: "Playfair Display", serif;
+
+      font-size: clamp(1.1rem, 3vw, 1.45rem);
+
+      line-height: 2;
+
+      color: #67585d;
+
+    }
+
+
+    .quote {
+
+      font-family: "Great Vibes", cursive;
+
+      font-size: 4.5rem;
+
+      line-height: .7;
+
+      color: var(--rosa);
+
+      margin-bottom: 20px;
+
+    }
+
+
+
+    /* ==============================
+       FOTO DESTACADA
+    ============================== */
+
+    .about-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+      align-items: center;
+
+      gap: 70px;
+
+    }
+
+
+    .photo-placeholder {
+
+      min-height: 580px;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      position: relative;
+
+      border-radius: 4px;
+
+      color: var(--vino);
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #f6e5e9,
+          #fffafa
+        );
+
+      border:
+        1px solid
+        rgba(196,161,107,.6);
+
+      box-shadow:
+        0 18px 55px
+        rgba(76,45,53,.1);
+
+      overflow: hidden;
+
+    }
+
+
+    .photo-placeholder::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 14px;
+
+      border:
+        1px solid
+        rgba(196,161,107,.3);
+
+    }
+
+
+    .photo-placeholder-content {
+
+      z-index: 2;
+
+      position: relative;
+
+      padding: 30px;
+
+    }
+
+
+    .photo-placeholder-icon {
+
+      display: block;
+
+      font-size: 3rem;
+
+      margin-bottom: 15px;
+
+      opacity: .55;
+
+    }
+
+
+    .photo-placeholder strong {
+
+      display: block;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.5rem;
+
+      font-weight: 500;
+
+    }
+
+
+    .photo-placeholder small {
+
+      display: block;
+
+      margin-top: 10px;
+
+      color: var(--gris);
+
+      font-size: .72rem;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .about-copy h2 {
+
+      font-family: "Great Vibes", cursive;
+
+      font-size: clamp(4rem, 8vw, 5.5rem);
+
+      font-weight: 400;
+
+      color: var(--vino);
+
+      line-height: 1;
+
+    }
+
+
+    .about-copy p {
+
+      color: var(--gris);
+
+      line-height: 1.9;
+
+      margin-top: 18px;
+
+    }
+
+
+    .number15 {
+
+      position: absolute;
+
+      right: 4%;
+      bottom: 4%;
+
+      z-index: -1;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(7rem, 18vw, 13rem);
+
+      line-height: .7;
+
+      color:
+        rgba(215,162,174,.15);
+
+    }
+
+
+
+    /* ==============================
+       COUNTDOWN
+    ============================== */
+
+    .countdown-section {
+
+      color: white;
+
+      text-align: center;
+
+      background:
+
+        radial-gradient(
+          circle at top,
+          rgba(214,160,173,.32),
+          transparent 40%
+        ),
+
+        linear-gradient(
+          135deg,
+          #754452,
+          #482b34
+        );
+
+    }
+
+
+    .countdown-section
+    .section-mini {
+
+      color: var(--dorado-claro);
+
+    }
+
+
+    .countdown-section
+    .section-title {
+
+      color: white;
+
+    }
+
+
+    .countdown {
+
+      max-width: 760px;
+
+      margin:
+        50px
+        auto
+        0;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
+
+    }
+
+
+    .time-box {
+
+      padding:
+        28px
+        10px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.25);
+
+      background:
+        rgba(255,255,255,.07);
+
+      backdrop-filter: blur(7px);
+
+      border-radius: 12px;
+
+    }
+
+
+    .time-box strong {
+
+      display: block;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(2.2rem, 7vw, 4rem);
+
+      font-weight: 500;
+
+    }
+
+
+    .time-box span {
+
+      font-size: .64rem;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      opacity: .78;
+
+    }
+
+
+
+    /* ==============================
+       DETALLES
+    ============================== */
+
+    .details {
+
+      background:
+        var(--rosa-claro);
+
+    }
+
+
+    .details-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
+
+      margin-top: 55px;
+
+    }
+
+
+    .detail-card {
+
+      padding:
+        42px
+        25px;
+
+      text-align: center;
+
+      border-radius: 18px;
+
+      background:
+        rgba(255,255,255,.8);
+
+      border:
+        1px solid
+        rgba(196,161,107,.2);
+
+      box-shadow:
+        0 10px 40px
+        rgba(110,68,79,.08);
+
+      transition: .35s ease;
+
+    }
+
+
+    .detail-card:hover {
+
+      transform:
+        translateY(-8px);
+
+      box-shadow:
+        0 18px 45px
+        rgba(110,68,79,.13);
+
+    }
+
+
+    .detail-icon {
+
+      width: 68px;
+      height: 68px;
+
+      margin:
+        0
+        auto
+        22px;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        var(--dorado);
+
+      font-size: 26px;
+
+      color: var(--vino);
+
+    }
+
+
+    .detail-card h3 {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      color: var(--vino);
+
+      font-size: 1.4rem;
+
+      margin-bottom: 13px;
+
+    }
+
+
+    .detail-card p {
+
+      color: var(--gris);
+
+      font-size: .9rem;
+
+      line-height: 1.8;
+
+    }
+
+
+    .btn {
+
+      display: inline-block;
+
+      margin-top: 23px;
+
+      padding:
+        13px
+        25px;
+
+      border:
+        1px solid
+        var(--vino);
+
+      color: var(--vino);
+
+      border-radius: 100px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-size: .7rem;
+
+      transition: .3s ease;
+
+    }
+
+
+    .btn:hover {
+
+      color: white;
+
+      background:
+        var(--vino);
+
+    }
+
+
+
+    /* ==============================
+       DRESS CODE
+    ============================== */
+
+    .dress {
+
+      text-align: center;
+
+      background:
+        white;
+
+    }
+
+
+    .dress-icon {
+
+      font-size: 55px;
+
+      margin-bottom: 20px;
+
+      color: var(--vino);
+
+    }
+
+
+    .dress p {
+
+      max-width: 640px;
+
+      margin: auto;
+
+      color: var(--gris);
+
+      line-height: 1.9;
+
+    }
+
+
+    .colors {
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 14px;
+
+      margin: 32px 0 17px;
+
+    }
+
+
+    .color-dot {
+
+      width: 36px;
+      height: 36px;
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 4px 12px
+        rgba(0,0,0,.1);
+
+    }
+
+
+
+    /* ==============================
+       GALERÍA
+    ============================== */
+
+    .gallery {
+
+      background: #fbf5f6;
+
+    }
+
+
+    .gallery-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(12, 1fr);
+
+      grid-auto-rows:
+        220px;
+
+      gap: 12px;
+
+      margin-top: 45px;
+
+    }
+
+
+    .gallery-photo {
+
+      position: relative;
+
+      overflow: hidden;
+
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      color: var(--vino);
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #f0d9df,
+          #fffafa
+        );
+
+      border:
+        1px solid
+        rgba(196,161,107,.35);
+
+      transition:
+        transform .4s ease,
+        box-shadow .4s ease;
+
+    }
+
+
+    .gallery-photo:hover {
+
+      transform:
+        scale(.985);
+
+      box-shadow:
+        0 15px 35px
+        rgba(117,68,82,.12);
+
+    }
+
+
+    .gallery-photo-content {
+
+      padding: 20px;
+
+    }
+
+
+    .gallery-photo-content span {
+
+      display: block;
+
+      font-size: 2rem;
+
+      margin-bottom: 10px;
+
+      opacity: .55;
+
+    }
+
+
+    .gallery-photo-content strong {
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size: 1.1rem;
+
+      font-weight: 500;
+
+    }
+
+
+    .gallery-photo:nth-child(1) {
+
+      grid-column: span 5;
+      grid-row: span 2;
+
+    }
+
+
+    .gallery-photo:nth-child(2) {
+
+      grid-column: span 7;
+
+    }
+
+
+    .gallery-photo:nth-child(3) {
+
+      grid-column: span 4;
+
+    }
+
+
+    .gallery-photo:nth-child(4) {
+
+      grid-column: span 3;
+
+    }
+
+
+
+    /* ==============================
+       GOOGLE FORMS
+    ============================== */
+
+    .rsvp {
+
+      text-align: center;
+
+      background:
+
+        radial-gradient(
+          circle at center,
+          #fff,
+          #f8ecef
+        );
+
+    }
+
+
+    .rsvp-box {
+
+      width:
+        min(680px, 100%);
+
+      margin: auto;
+
+      padding:
+        55px
+        28px;
+
+      border:
+        1px solid
+        rgba(196,161,107,.45);
+
+      background:
+        rgba(255,255,255,.8);
+
+      box-shadow:
+        0 20px 60px
+        rgba(117,68,82,.07);
+
+    }
+
+
+    .rsvp-box p {
+
+      max-width: 500px;
+
+      margin: auto;
+
+      color: var(--gris);
+
+      line-height: 1.8;
+
+    }
+
+
+    .forms-btn {
+
+      display: inline-flex;
+
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 30px;
+
+      padding:
+        16px
+        31px;
+
+      border-radius:
+        100px;
+
+      color: white;
+
+      background:
+        var(--vino);
+
+      font-size: .72rem;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      transition: .3s ease;
+
+    }
+
+
+    .forms-btn:hover {
+
+      transform:
+        translateY(-4px);
+
+      box-shadow:
+        0 12px 30px
+        rgba(117,68,82,.23);
+
+    }
+
+
+
+    /* ==============================
+       FOOTER
+    ============================== */
+
+    footer {
+
+      padding:
+        65px
+        20px;
+
+      text-align: center;
+
+      color: white;
+
+      background:
+        var(--vino-oscuro);
+
+    }
+
+
+    footer h2 {
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size:
+        clamp(3.5rem, 10vw, 5rem);
+
+      font-weight: 400;
+
+    }
+
+
+    footer p {
+
+      margin-top: 10px;
+
+      opacity: .65;
+
+      font-size: .67rem;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+    }
+
+
+
+    /* ==============================
+       ANIMACIONES
+    ============================== */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+        translateY(40px);
+
+      transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+    }
+
+
+    .reveal.active {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+
+    }
+
+
+    .petal {
+
+      position: fixed;
+
+      top: -50px;
+
+      z-index: 10;
+
+      pointer-events: none;
+
+      opacity: .4;
+
+      animation:
+        caer linear forwards;
+
+    }
+
+
+    @keyframes aparecer {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(25px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    @keyframes pulso {
+
+      0% {
+
+        box-shadow:
+          0 0 0 0
+          rgba(117,68,82,.4);
+
+      }
+
+      70% {
+
+        box-shadow:
+          0 0 0 14px
+          rgba(117,68,82,0);
+
+      }
+
+      100% {
+
+        box-shadow:
+          0 0 0 0
+          rgba(117,68,82,0);
+
+      }
+
+    }
+
+
+    @keyframes scrollAnim {
+
+      0% {
+
+        transform:
+          scaleY(0);
+
+        transform-origin:
+          top;
+
+      }
+
+      50% {
+
+        transform:
+          scaleY(1);
+
+        transform-origin:
+          top;
+
+      }
+
+      51% {
+
+        transform-origin:
+          bottom;
+
+      }
+
+      100% {
+
+        transform:
+          scaleY(0);
+
+        transform-origin:
+          bottom;
+
+      }
+
+    }
+
+
+    @keyframes caer {
+
+      to {
+
+        transform:
+          translateY(110vh)
+          rotate(540deg);
+
+        opacity: 0;
+
+      }
+
+    }
+
+
+
+    /* ==============================
+       TABLETS
+    ============================== */
+
+    @media
+    (max-width: 900px) {
+
+      section {
+
+        padding:
+          85px
+          22px;
+
+      }
+
+
+      .about-grid {
+
+        gap: 40px;
+
+      }
+
+
+      .photo-placeholder {
+
+        min-height: 480px;
+
+      }
+
+
+      .details-grid {
+
+        gap: 15px;
+
+      }
+
+    }
+
+
+
+    /* ==============================
+       CELULARES
+    ============================== */
+
+    @media
+    (max-width: 700px) {
+
+
+      section {
+
+        padding:
+          75px
+          18px;
+
+      }
+
+
+      .intro::before {
+
+        inset: 12px;
+
+      }
+
+
+      .hero::after {
+
+        inset: 12px;
+
+      }
+
+
+      .hero-content {
+
+        padding:
+          80px
+          15px
+          50px;
+
+      }
+
+
+      .about-grid {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 40px;
+
+      }
+
+
+      .photo-placeholder {
+
+        width: 100%;
+
+        min-height: 500px;
+
+      }
+
+
+      .about-copy {
+
+        text-align: center;
+
+      }
+
+
+      .countdown {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap: 10px;
+
+      }
+
+
+      .details-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .gallery-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        grid-auto-rows:
+          220px;
+
+      }
+
+
+      .gallery-photo:nth-child(n) {
+
+        grid-column: auto;
+
+        grid-row: auto;
+
+      }
+
+
+      .gallery-photo:nth-child(1) {
+
+        grid-column: span 2;
+
+        grid-row: span 2;
+
+      }
+
+
+      .rsvp-box {
+
+        padding:
+          45px
+          20px;
+
+      }
+
+    }
+
+
+
+    /* ==============================
+       CELULARES PEQUEÑOS
+    ============================== */
+
+    @media
+    (max-width: 430px) {
+
+
+      .intro h1 {
+
+        font-size: 4.8rem;
+
+      }
+
+
+      .intro h2 {
+
+        letter-spacing: 5px;
+
+      }
+
+
+      .hero h1 {
+
+        font-size: 5.2rem;
+
+      }
+
+
+      .hero-kicker {
+
+        letter-spacing: 4px;
+
+      }
+
+
+      .hero-date {
+
+        letter-spacing: 4px;
+
+      }
+
+
+      .photo-placeholder {
+
+        min-height: 430px;
+
+      }
+
+
+      .countdown {
+
+        gap: 7px;
+
+      }
+
+
+      .time-box {
+
+        padding:
+          22px
+          5px;
+
+      }
+
+
+      .time-box span {
+
+        letter-spacing: 2px;
+
+        font-size: .58rem;
+
+      }
+
+
+      .gallery-grid {
+
+        grid-template-columns:
+          1fr;
+
+        grid-auto-rows:
+          300px;
+
+      }
+
+
+      .gallery-photo:nth-child(n) {
+
+        grid-column: 1;
+
+        grid-row: auto;
+
+      }
+
+
+      .gallery-photo:nth-child(1) {
+
+        grid-column: 1;
+
+        grid-row: auto;
+
+      }
+
+
+      .forms-btn {
+
+        width: 100%;
+
+        padding:
+          16px
+          15px;
+
+      }
+
+
+      .music-btn {
+
+        right: 13px;
+        bottom: 13px;
+
+        width: 48px;
+        height: 48px;
+
+      }
+
+    }
+
+
+  </style>
+
+</head>
+
+
+
+<body class="no-scroll">
+
+
+
+  <!-- ==============================
+       PANTALLA DE APERTURA
+  ============================== -->
+
+  <div
+    class="intro"
+    id="intro"
+  >
+
+    <div class="intro-content">
+
+
+      <div class="intro-small">
+
+        Tenemos el honor de invitarte
+
+      </div>
+
+
+      <h1>
+
+        Iveth
+
+      </h1>
+
+
+      <h2>
+
+        Mis XV Años
+
+      </h2>
+
+
+      <div class="intro-line"></div>
+
+
+      <button
+        class="open-btn"
+        onclick="abrirInvitacion()"
+      >
+
+        ABRIR INVITACIÓN
+
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ==============================
+       MÚSICA
+  ============================== -->
+
+  <button
+
+    class="music-btn"
+
+    id="musicBtn"
+
+    onclick="toggleMusic()"
+
+    aria-label="Activar o pausar música"
+
+  >
+
+    ♫
+
+  </button>
+
+
+
+  <!--
+
+    Para agregar música:
+
+    1. Coloca un archivo llamado musica.mp3
+       junto al index.html.
+
+    2. GitHub Pages lo cargará automáticamente.
+
+  -->
+
+  <audio
+    id="music"
+    loop
+    preload="none"
+  >
+
+    <source
+      src="musica.mp3"
+      type="audio/mpeg"
+    >
+
+  </audio>
+
+
+
+  <!-- ==============================
+       PORTADA
+  ============================== -->
+
+  <header class="hero">
+
+
+    <div class="hero-content">
+
+
+      <p class="hero-kicker">
+
+        Celebra conmigo
+
+      </p>
+
+
+      <h1>
+
+        Iveth Mejía
+
+      </h1>
+
+
+      <p class="hero-date">
+
+        03 • SEPT • 2026
+
+      </p>
+
+
+      <div class="scroll-indicator">
+
+        Descubre
+
+        <div class="scroll-line"></div>
+
+      </div>
+
+
+    </div>
+
+
+  </header>
+
+
+
+  <!-- ==============================
+       MENSAJE
+  ============================== -->
+
+  <section class="message">
+
+
+    <div
+      class="container reveal"
+    >
+
+
+      <div class="quote">
+
+        “
+
+      </div>
+
+
+      <p>
+
+        Hay momentos en la vida
+        que soñamos desde pequeñas,
+        momentos únicos que deseamos
+        compartir con las personas
+        que ocupan un lugar especial
+        en nuestro corazón.
+
+      </p>
+
+
+      <div class="divider">
+
+        <span></span>
+
+        <i>✦</i>
+
+        <span></span>
+
+      </div>
+
+
+      <p>
+
+        Hoy uno de esos sueños
+        comienza a hacerse realidad
+        y quiero que seas parte
+        de esta celebración.
+
+      </p>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ==============================
+       FOTO PRINCIPAL
+  ============================== -->
+
+  <section>
+
+
+    <div
+      class="container about-grid"
+    >
+
+
+      <div
+        class="photo-placeholder reveal"
+      >
+
+
+        <div
+          class="photo-placeholder-content"
+        >
+
+
+          <span
+            class="photo-placeholder-icon"
+          >
+
+            ♡
+
+          </span>
+
+
+          <strong>
+
+            Aquí irá la foto
+
+          </strong>
+
+
+          <small>
+
+            Fotografía principal
+
+          </small>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <div
+        class="about-copy reveal"
+      >
+
+
+        <div class="section-mini">
+
+          Un momento inolvidable
+
+        </div>
+
+
+        <h2>
+
+          Mis quince
+
+        </h2>
+
+
+        <p>
+
+          Con el corazón lleno de
+          alegría doy gracias a Dios
+          por permitirme llegar a
+          esta hermosa etapa de mi vida.
+
+        </p>
+
+
+        <p>
+
+          Quiero compartir esta noche
+          tan especial junto a mi
+          familia, amigos y todas esas
+          personas que han sido parte
+          de mi historia.
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+    <div class="number15">
+
+      XV
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ==============================
+       CUENTA REGRESIVA
+  ============================== -->
+
+  <section
+    class="countdown-section"
+  >
+
+
+    <div
+      class="container reveal"
+    >
+
+
+      <div class="section-mini">
+
+        Cada vez falta menos
+
+      </div>
+
+
+      <h2 class="section-title">
+
+        Cuenta regresiva
+
+      </h2>
+
+
+
+      <div class="countdown">
+
+
+        <div class="time-box">
+
+          <strong id="days">
+
+            00
+
+          </strong>
+
+          <span>
+
+            Días
+
+          </span>
+
+        </div>
+
+
+
+        <div class="time-box">
+
+          <strong id="hours">
+
+            00
+
+          </strong>
+
+          <span>
+
+            Horas
+
+          </span>
+
+        </div>
+
+
+
+        <div class="time-box">
+
+          <strong id="minutes">
+
+            00
+
+          </strong>
+
+          <span>
+
+            Minutos
+
+          </span>
+
+        </div>
+
+
+
+        <div class="time-box">
+
+          <strong id="seconds">
+
+            00
+
+          </strong>
+
+          <span>
+
+            Segundos
+
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ==============================
+       DATOS DEL EVENTO
+  ============================== -->
+
+  <section class="details">
+
+
+    <div class="container">
+
+
+      <div
+        class="section-mini reveal"
+      >
+
+        Reserva esta fecha
+
+      </div>
+
+
+      <h2
+        class="section-title reveal"
+      >
+
+        Detalles de la celebración
+
+      </h2>
+
+
+
+      <div class="details-grid">
+
+
+        <!-- FECHA -->
+
+        <div
+          class="detail-card reveal"
+        >
+
+
+          <div class="detail-icon">
+
+            ♡
+
+          </div>
+
+
+          <h3>
+
+            Fecha
+
+          </h3>
+
+
+          <p>
+
+            Jueves
+
+            <br>
+
+            <strong>
+
+              3 de septiembre de 2026
+
+            </strong>
+
+          </p>
+
+
+        </div>
+
+
+
+        <!-- HORA -->
+
+        <div
+          class="detail-card reveal"
+        >
+
+
+          <div class="detail-icon">
+
+            ◷
+
+          </div>
+
+
+          <h3>
+
+            Hora
+
+          </h3>
+
+
+          <p>
+
+            Próximamente
+
+            <br>
+
+            <strong>
+
+              Aquí irá la hora
+
+            </strong>
+
+          </p>
+
+
+        </div>
+
+
+
+        <!-- UBICACIÓN -->
+
+        <div
+          class="detail-card reveal"
+        >
+
+
+          <div class="detail-icon">
+
+            ♧
+
+          </div>
+
+
+          <h3>
+
+            Lugar
+
+          </h3>
+
+
+          <p>
+
+            Aquí irá el nombre
+
+            <br>
+
+            del salón o ubicación
+
+          </p>
+
+
+          <!--
+
+            Reemplazar el enlace
+            por el enlace real
+            de Google Maps.
+
+          -->
+
+          <a
+
+            href="https://maps.google.com/"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+            class="btn"
+
+          >
+
+            Ver ubicación
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ==============================
+       DRESS CODE
+  ============================== -->
+
+  <section class="dress">
+
+
+    <div
+      class="container reveal"
+    >
+
+
+      <div class="section-mini">
+
+        Para esta noche especial
+
+      </div>
+
+
+      <h2 class="section-title">
+
+        Dress Code
+
+      </h2>
+
+
+      <div class="dress-icon">
+
+        ♕
+
+      </div>
+
+
+      <h3
+        style="
+        font-family:'Playfair Display', serif;
+        color:var(--vino);
+        font-size:1.6rem;
+        margin-bottom:15px;
+        "
+      >
+
+        Elegante
+
+      </h3>
+
+
+      <p>
+
+        Será una noche especial.
+        Te invitamos a lucir
+        tu mejor atuendo y acompañarnos
+        con vestimenta formal.
+
+      </p>
+
+
+      <div class="colors">
+
+
+        <div
+
+          class="color-dot"
+
+          style="
+          background:#754452;
+          "
+
+        ></div>
+
+
+        <div
+
+          class="color-dot"
+
+          style="
+          background:#d6a0ad;
+          "
+
+        ></div>
+
+
+        <div
+
+          class="color-dot"
+
+          style="
+          background:#c4a16b;
+          "
+
+        ></div>
+
+
+      </div>
+
+
+      <p
+        style="
+        font-size:.72rem;
+        text-transform:uppercase;
+        letter-spacing:2px;
+        margin-top:14px;
+        "
+      >
+
+        Paleta de referencia
+
+      </p>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ==============================
+       GALERÍA DE 4 FOTOS
+  ============================== -->
+
+  <section class="gallery">
+
+
+    <div class="container">
+
+
+      <div
+        class="section-mini reveal"
+      >
+
+        Próximamente
+
+      </div>
+
+
+      <h2
+        class="section-title reveal"
+      >
+
+        Galería
+
+      </h2>
+
+
+
+      <div class="gallery-grid">
+
+
+        <!-- FOTO 1 -->
+
+        <div
+          class="gallery-photo reveal"
+        >
+
+
+          <div
+            class="gallery-photo-content"
+          >
+
+            <span>
+
+              ♡
+
+            </span>
+
+            <strong>
+
+              Aquí irá la foto 1
+
+            </strong>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- FOTO 2 -->
+
+        <div
+          class="gallery-photo reveal"
+        >
+
+
+          <div
+            class="gallery-photo-content"
+          >
+
+            <span>
+
+              ♡
+
+            </span>
+
+            <strong>
+
+              Aquí irá la foto 2
+
+            </strong>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- FOTO 3 -->
+
+        <div
+          class="gallery-photo reveal"
+        >
+
+
+          <div
+            class="gallery-photo-content"
+          >
+
+            <span>
+
+              ♡
+
+            </span>
+
+            <strong>
+
+              Aquí irá la foto 3
+
+            </strong>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- FOTO 4 -->
+
+        <div
+          class="gallery-photo reveal"
+        >
+
+
+          <div
+            class="gallery-photo-content"
+          >
+
+            <span>
+
+              ♡
+
+            </span>
+
+            <strong>
+
+              Aquí irá la foto 4
+
+            </strong>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ==============================
+       CONFIRMAR ASISTENCIA
+  ============================== -->
+
+  <section class="rsvp">
+
+
+    <div class="container">
+
+
+      <div
+        class="rsvp-box reveal"
+      >
+
+
+        <div class="section-mini">
+
+          Esperamos contar contigo
+
+        </div>
+
+
+        <h2 class="script-title">
+
+          Confirma tu asistencia
+
+        </h2>
+
+
+        <div class="divider">
+
+          <span></span>
+
+          <i>✦</i>
+
+          <span></span>
+
+        </div>
+
+
+        <p>
+
+          Tu presencia hará
+          que esta celebración
+          sea aún más especial.
+
+          <br><br>
+
+          Por favor confirma
+          tu asistencia mediante
+          el siguiente formulario.
+
+        </p>
+
+
+
+        <!--
+
+          IMPORTANTE:
+
+          AQUÍ DEBES PEGAR
+          EL ENLACE REAL
+          DE GOOGLE FORMS.
+
+        -->
+
+        <a
+
+          class="forms-btn"
+
+          href="https://forms.google.com/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Confirmar asistencia
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+  <!-- ==============================
+       FOOTER
+  ============================== -->
+
+  <footer>
+
+
+    <h2>
+
+      Iveth Mejía
+
+    </h2>
+
+
+    <p>
+
+      Mis XV • 03.09.2026
+
+    </p>
+
+
+  </footer>
+
+
+
+  <!-- ==============================
+       JAVASCRIPT
+  ============================== -->
+
+  <script>
+
+
+    /* ==============================
+       ABRIR INVITACIÓN
+    ============================== */
+
+    function abrirInvitacion() {
+
+
+      const intro =
+        document.getElementById(
+          "intro"
+        );
+
+
+      const musica =
+        document.getElementById(
+          "music"
+        );
+
+
+      const musicBtn =
+        document.getElementById(
+          "musicBtn"
+        );
+
+
+      intro.classList.add(
+        "ocultar"
+      );
+
+
+      document.body.classList.remove(
+        "no-scroll"
+      );
+
+
+      musicBtn.style.display =
+        "flex";
+
+
+      musica.volume =
+        0.35;
+
+
+      musica.play()
+
+        .then(() => {
+
+
+          musicBtn.classList.add(
+            "playing"
+          );
+
+
+          musicBtn.innerHTML =
+            "❚❚";
+
+
+        })
+
+        .catch(() => {
+
+
+          musicBtn.innerHTML =
+            "♫";
+
+
+        });
+
+
+      crearPetalos();
+
+
+    }
+
+
+
+    /* ==============================
+       MÚSICA
+    ============================== */
+
+    function toggleMusic() {
+
+
+      const musica =
+        document.getElementById(
+          "music"
+        );
+
+
+      const musicBtn =
+        document.getElementById(
+          "musicBtn"
+        );
+
+
+      if (
+        musica.paused
+      ) {
+
+
+        musica.play();
+
+
+        musicBtn.innerHTML =
+          "❚❚";
+
+
+        musicBtn.classList.add(
+          "playing"
+        );
+
+
+      } else {
+
+
+        musica.pause();
+
+
+        musicBtn.innerHTML =
+          "♫";
+
+
+        musicBtn.classList.remove(
+          "playing"
+        );
+
+
+      }
+
+
+    }
+
+
+
+    /* ==============================
+       CUENTA REGRESIVA
+
+       Septiembre = mes 8
+       porque JavaScript empieza
+       a contar los meses desde 0.
+
+       Enero = 0
+       Septiembre = 8
+
+       Por ahora se ha colocado
+       7:00 PM como hora provisional.
+    ============================== */
+
+
+    const fechaEvento =
+      new Date(
+        2026,
+        8,
+        3,
+        19,
+        0,
+        0
+      ).getTime();
+
+
+
+    function actualizarContador() {
+
+
+      const ahora =
+        new Date().getTime();
+
+
+      const diferencia =
+        fechaEvento - ahora;
+
+
+
+      if (
+        diferencia <= 0
+      ) {
+
+
+        document.getElementById(
+          "days"
+        ).innerText = "00";
+
+
+        document.getElementById(
+          "hours"
+        ).innerText = "00";
+
+
+        document.getElementById(
+          "minutes"
+        ).innerText = "00";
+
+
+        document.getElementById(
+          "seconds"
+        ).innerText = "00";
+
+
+        return;
+
+
+      }
+
+
+
+      const dias =
+
+        Math.floor(
+
+          diferencia /
+
+          (
+            1000 *
+            60 *
+            60 *
+            24
+          )
+
+        );
+
+
+
+      const horas =
+
+        Math.floor(
+
+          (
+            diferencia %
+
+            (
+              1000 *
+              60 *
+              60 *
+              24
+            )
+          )
+
+          /
+
+          (
+            1000 *
+            60 *
+            60
+          )
+
+        );
+
+
+
+      const minutos =
+
+        Math.floor(
+
+          (
+            diferencia %
+
+            (
+              1000 *
+              60 *
+              60
+            )
+          )
+
+          /
+
+          (
+            1000 *
+            60
+          )
+
+        );
+
+
+
+      const segundos =
+
+        Math.floor(
+
+          (
+            diferencia %
+
+            (
+              1000 *
+              60
+            )
+          )
+
+          /
+
+          1000
+
+        );
+
+
+
+      document.getElementById(
+        "days"
+      ).innerText =
+
+        String(
+          dias
+        ).padStart(
+          2,
+          "0"
+        );
+
+
+
+      document.getElementById(
+        "hours"
+      ).innerText =
+
+        String(
+          horas
+        ).padStart(
+          2,
+          "0"
+        );
+
+
+
+      document.getElementById(
+        "minutes"
+      ).innerText =
+
+        String(
+          minutos
+        ).padStart(
+          2,
+          "0"
+        );
+
+
+
+      document.getElementById(
+        "seconds"
+      ).innerText =
+
+        String(
+          segundos
+        ).padStart(
+          2,
+          "0"
+        );
+
+
+    }
+
+
+
+    actualizarContador();
+
+
+    setInterval(
+
+      actualizarContador,
+
+      1000
+
+    );
+
+
+
+    /* ==============================
+       ANIMACIONES AL SCROLL
+    ============================== */
+
+
+    const elementosReveal =
+
+      document.querySelectorAll(
+        ".reveal"
+      );
+
+
+
+    const observer =
+
+      new IntersectionObserver(
+
+        (entries) => {
+
+
+          entries.forEach(
+
+            (entry) => {
+
+
+              if (
+                entry.isIntersecting
+              ) {
+
+
+                entry.target
+                  .classList
+                  .add(
+                    "active"
+                  );
+
+
+              }
+
+
+            }
+
+          );
+
+
+        },
+
+        {
+
+          threshold: 0.1
+
+        }
+
+      );
+
+
+
+    elementosReveal
+      .forEach(
+
+        (elemento) => {
+
+
+          observer.observe(
+            elemento
+          );
+
+
+        }
+
+      );
+
+
+
+    /* ==============================
+       PARTÍCULAS
+    ============================== */
+
+
+    let petalosActivos =
+      false;
+
+
+    function crearPetalos() {
+
+
+      if (
+        petalosActivos
+      ) {
+
+        return;
+
+      }
+
+
+      petalosActivos =
+        true;
+
+
+
+      setInterval(() => {
+
+
+        /*
+        Reducimos partículas
+        en celulares pequeños
+        para mejorar rendimiento.
+        */
+
+
+        if (
+          window.innerWidth < 500
+          &&
+          Math.random() > .55
+        ) {
+
+          return;
+
+        }
+
+
+
+        const petalo =
+          document.createElement(
+            "div"
+          );
+
+
+        petalo.classList.add(
+          "petal"
+        );
+
+
+        petalo.innerHTML =
+          "♡";
+
+
+        petalo.style.left =
+
+          Math.random() *
+          100 +
+          "vw";
+
+
+        petalo.style.fontSize =
+
+          (
+            Math.random() *
+            10 +
+            7
+          )
+          +
+          "px";
+
+
+        petalo.style.animationDuration =
+
+          (
+            Math.random() *
+            5 +
+            6
+          )
+          +
+          "s";
+
+
+        petalo.style.color =
+
+          Math.random() > .5
+
+          ?
+
+          "#d6a0ad"
+
+          :
+
+          "#c4a16b";
+
+
+
+        document.body
+          .appendChild(
+            petalo
+          );
+
+
+
+        setTimeout(() => {
+
+
+          petalo.remove();
+
+
+        }, 11500);
+
+
+
+      }, 850);
+
+
+    }
+
+
+  </script>
+
+
+</body>
+
+</html>
