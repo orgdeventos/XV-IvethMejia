@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
 
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1.0"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
   >
 
   <meta
     name="theme-color"
-    content="#f5e9ec"
+    content="#5b3943"
   >
 
   <title>Mis XV Años | Iveth Mejía</title>
 
+
   <!-- GOOGLE FONTS -->
+
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -35,32 +39,33 @@
 
   <style>
 
-    /* ==============================
+    /* =====================================================
        VARIABLES
-    ============================== */
+    ===================================================== */
 
     :root {
 
-      --rosa: #d6a0ad;
-      --rosa-claro: #f8ecef;
-      --rosa-suave: #ead3d9;
+      --rosa: #d7a4b0;
+      --rosa-claro: #f8edef;
+      --rosa-suave: #eedce1;
 
-      --vino: #754452;
-      --vino-oscuro: #55313a;
+      --vino: #754b57;
+      --vino-oscuro: #4d3039;
 
-      --dorado: #c4a16b;
-      --dorado-claro: #e3c99e;
+      --dorado: #c6a56e;
+      --dorado-claro: #e5cfaa;
 
       --blanco: #fffdfd;
-      --texto: #493f42;
-      --gris: #817579;
+      --texto: #4d4245;
+      --gris: #84777b;
 
     }
 
 
-    /* ==============================
+
+    /* =====================================================
        RESET
-    ============================== */
+    ===================================================== */
 
     * {
 
@@ -74,29 +79,27 @@
     html {
 
       scroll-behavior: smooth;
+      overflow-x: hidden;
 
     }
 
 
     body {
 
-      font-family: "Montserrat", sans-serif;
-
-      background:
-        radial-gradient(
-          circle at top left,
-          #fff7f8,
-          transparent 35%
-        ),
-        linear-gradient(
-          180deg,
-          #fffdfd,
-          #f9eff1
-        );
-
-      color: var(--texto);
+      width: 100%;
+      min-height: 100%;
 
       overflow-x: hidden;
+
+      font-family:
+        "Montserrat",
+        sans-serif;
+
+      background:
+        #fffdfd;
+
+      color:
+        var(--texto);
 
     }
 
@@ -105,76 +108,140 @@
 
       overflow: hidden;
 
+      height: 100dvh;
+
+    }
+
+
+    img {
+
+      display: block;
+
+      width: 100%;
+
+      max-width: 100%;
+
     }
 
 
     a {
 
-      text-decoration: none;
       color: inherit;
+
+      text-decoration: none;
 
     }
 
 
     button {
 
-      font-family: inherit;
+      font: inherit;
 
     }
 
 
 
-    /* ==============================
-       PANTALLA INICIAL
-    ============================== */
+    /* =====================================================
+       INTRO / PORTADA CERRADA
+    ===================================================== */
 
     .intro {
 
       position: fixed;
 
-      inset: 0;
+      top: 0;
 
-      width: 100%;
+      left: 0;
+
+      width: 100vw;
+
       height: 100dvh;
 
-      z-index: 9999;
+      z-index: 99999;
+
+      isolation: isolate;
+
+      overflow: hidden;
 
       display: flex;
+
       justify-content: center;
+
       align-items: center;
 
-      text-align: center;
-
       background:
-
-        linear-gradient(
-          rgba(62, 33, 42, .78),
-          rgba(62, 33, 42, .92)
-        ),
-
-        radial-gradient(
-          circle at center,
-          #d6a0ad,
-          #754452
-        );
+        var(--vino-oscuro);
 
       transition:
-        opacity 1s ease,
-        visibility 1s ease,
-        transform 1s ease;
+        opacity .9s ease,
+        visibility .9s ease,
+        transform .9s ease;
 
     }
 
 
-    .intro::before {
+    .intro-photo {
 
-      content: "";
+      position: absolute;
+
+      inset: 0;
+
+      z-index: -3;
+
+      background-image:
+        url("foto1.jpeg");
+
+      background-size:
+        cover;
+
+      background-position:
+        center 25%;
+
+      background-repeat:
+        no-repeat;
+
+      transform:
+        scale(1.02);
+
+    }
+
+
+    .intro-overlay {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: -2;
+
+      background:
+
+        linear-gradient(
+
+          180deg,
+
+          rgba(51, 29, 36, .63) 0%,
+
+          rgba(68, 39, 48, .76) 45%,
+
+          rgba(57, 33, 41, .96) 100%
+
+        );
+
+    }
+
+
+    .intro-frame {
 
       position: absolute;
 
       inset: 20px;
 
-      border: 1px solid rgba(255,255,255,.3);
+      z-index: -1;
+
+      border:
+        1px solid
+        rgba(255,255,255,.32);
 
       pointer-events: none;
 
@@ -187,176 +254,260 @@
 
       visibility: hidden;
 
-      transform: scale(1.05);
+      pointer-events: none;
+
+      transform:
+        scale(1.03);
 
     }
 
 
     .intro-content {
 
-      width: min(90%, 540px);
+      width:
+        min(90%, 570px);
 
-      padding: 40px 25px;
+      padding:
+        35px 20px;
 
-      position: relative;
+      text-align:
+        center;
 
-      z-index: 2;
+      color:
+        white;
 
-      color: white;
+      position:
+        relative;
 
-      animation: aparecer 1.3s ease;
+      z-index: 10;
+
+      animation:
+        introEntrada 1.2s ease;
 
     }
 
 
     .intro-small {
 
-      font-size: .73rem;
+      margin-bottom:
+        22px;
 
-      letter-spacing: 5px;
+      font-size:
+        .72rem;
 
-      text-transform: uppercase;
+      font-weight:
+        500;
 
-      margin-bottom: 22px;
+      letter-spacing:
+        5px;
 
-      opacity: .88;
+      text-transform:
+        uppercase;
+
+      opacity:
+        .9;
 
     }
 
 
     .intro h1 {
 
-      font-family: "Great Vibes", cursive;
+      font-family:
+        "Great Vibes",
+        cursive;
 
-      font-size: clamp(4rem, 15vw, 8rem);
+      font-size:
+        clamp(
+          5rem,
+          15vw,
+          8.5rem
+        );
 
-      line-height: .85;
+      font-weight:
+        400;
 
-      font-weight: 400;
+      line-height:
+        .82;
+
+      text-shadow:
+        0 8px 30px
+        rgba(0,0,0,.25);
 
     }
 
 
     .intro h2 {
 
-      font-family: "Playfair Display", serif;
+      margin-top:
+        30px;
 
-      font-size: clamp(.9rem, 3vw, 1.2rem);
+      font-family:
+        "Playfair Display",
+        serif;
 
-      font-weight: 400;
+      font-size:
+        clamp(
+          .9rem,
+          2.8vw,
+          1.15rem
+        );
 
-      letter-spacing: 7px;
+      font-weight:
+        400;
 
-      text-transform: uppercase;
+      letter-spacing:
+        7px;
 
-      margin-top: 25px;
+      text-transform:
+        uppercase;
 
     }
 
 
     .intro-line {
 
-      width: 65px;
-      height: 1px;
+      width:
+        65px;
 
-      background: rgba(255,255,255,.8);
+      height:
+        1px;
 
-      margin: 30px auto;
+      margin:
+        30px auto;
+
+      background:
+        rgba(255,255,255,.8);
 
     }
 
 
     .open-btn {
 
-      border: 1px solid rgba(255,255,255,.85);
+      padding:
+        15px
+        32px;
 
-      color: white;
+      color:
+        white;
 
-      padding: 15px 32px;
+      background:
+        rgba(255,255,255,.08);
 
-      border-radius: 100px;
+      border:
+        1px solid
+        rgba(255,255,255,.9);
 
-      background: rgba(255,255,255,.08);
+      border-radius:
+        100px;
 
-      backdrop-filter: blur(10px);
+      backdrop-filter:
+        blur(10px);
 
-      letter-spacing: 2px;
+      -webkit-backdrop-filter:
+        blur(10px);
 
-      font-size: .75rem;
+      cursor:
+        pointer;
 
-      cursor: pointer;
+      font-size:
+        .72rem;
 
-      transition: .35s ease;
+      font-weight:
+        500;
+
+      letter-spacing:
+        2px;
+
+      text-transform:
+        uppercase;
+
+      transition:
+        .3s ease;
 
     }
 
 
     .open-btn:hover {
 
-      background: white;
+      background:
+        white;
 
-      color: var(--vino);
+      color:
+        var(--vino);
 
-      transform: translateY(-3px);
+      transform:
+        translateY(-3px);
 
     }
 
 
 
-    /* ==============================
+    /* =====================================================
        BOTÓN MÚSICA
-    ============================== */
+    ===================================================== */
 
     .music-btn {
 
       position: fixed;
 
       right: 18px;
+
       bottom: 18px;
 
-      z-index: 500;
+      z-index: 5000;
 
       width: 52px;
-      height: 52px;
 
-      border-radius: 50%;
+      height: 52px;
 
       border: none;
 
-      background: rgba(117,68,82,.94);
-
-      color: white;
-
-      font-size: 18px;
-
-      cursor: pointer;
+      border-radius: 50%;
 
       display: none;
 
-      align-items: center;
       justify-content: center;
 
+      align-items: center;
+
+      color:
+        white;
+
+      background:
+        rgba(117,75,87,.95);
+
       box-shadow:
-        0 8px 25px rgba(0,0,0,.18);
+        0 10px 30px
+        rgba(0,0,0,.18);
+
+      cursor:
+        pointer;
 
     }
 
 
     .music-btn.playing {
 
-      animation: pulso 2s infinite;
+      animation:
+        musicPulse 2s infinite;
 
     }
 
 
 
-    /* ==============================
-       HERO
-    ============================== */
+    /* =====================================================
+       HERO PRINCIPAL
+    ===================================================== */
 
     .hero {
 
-      min-height: 100dvh;
+      position: relative;
+
+      width: 100%;
+
+      min-height: 100svh;
+
+      overflow: hidden;
 
       display: flex;
 
@@ -364,59 +515,77 @@
 
       justify-content: center;
 
-      position: relative;
-
-      overflow: hidden;
-
-      text-align: center;
+      isolation: isolate;
 
       background:
-
-        linear-gradient(
-          180deg,
-          rgba(117,68,82,.25),
-          rgba(117,68,82,.55),
-          rgba(62,31,40,.95)
-        );
+        #4d3039;
 
     }
 
 
-    .hero::before {
-
-      content: "AQUÍ IRÁ LA FOTO PRINCIPAL";
+    .hero-photo {
 
       position: absolute;
 
       inset: 0;
 
-      display: flex;
+      z-index: -3;
 
-      justify-content: center;
-      align-items: center;
+      background-image:
+        url("foto1.jpeg");
 
-      padding-bottom: 180px;
+      background-size:
+        cover;
 
-      color: rgba(255,255,255,.48);
+      background-position:
+        center 25%;
 
-      font-size: clamp(.85rem, 2vw, 1.1rem);
-
-      letter-spacing: 4px;
-
-      text-transform: uppercase;
+      background-repeat:
+        no-repeat;
 
     }
 
 
-    .hero::after {
+    .hero-overlay {
 
-      content: "";
+      position: absolute;
+
+      inset: 0;
+
+      z-index: -2;
+
+      background:
+
+        linear-gradient(
+
+          180deg,
+
+          rgba(33,20,24,.08) 0%,
+
+          rgba(35,20,26,.10) 40%,
+
+          rgba(54,31,39,.70) 75%,
+
+          rgba(54,31,39,.92) 100%
+
+        );
+
+    }
+
+
+    .hero-frame {
 
       position: absolute;
 
       inset: 20px;
 
-      border: 1px solid rgba(255,255,255,.2);
+      z-index: -1;
+
+      border:
+        1px solid
+        rgba(255,255,255,.22);
+
+      pointer-events: none;
 
     }
 
@@ -428,78 +597,115 @@
       padding:
         100px
         20px
-        60px;
+        65px;
 
-      position: relative;
+      color:
+        white;
 
-      z-index: 2;
+      text-align:
+        center;
 
-      color: white;
+      position:
+        relative;
+
+      z-index: 3;
 
     }
 
 
     .hero-kicker {
 
-      font-size: .72rem;
+      margin-bottom:
+        18px;
 
-      letter-spacing: 6px;
+      font-size:
+        .7rem;
 
-      text-transform: uppercase;
+      letter-spacing:
+        6px;
 
-      margin-bottom: 17px;
+      text-transform:
+        uppercase;
 
     }
 
 
     .hero h1 {
 
-      font-family: "Great Vibes", cursive;
+      font-family:
+        "Great Vibes",
+        cursive;
 
-      font-size: clamp(4.7rem, 16vw, 10rem);
+      font-size:
+        clamp(
+          5rem,
+          15vw,
+          9.5rem
+        );
 
-      line-height: .82;
+      font-weight:
+        400;
 
-      font-weight: 400;
+      line-height:
+        .83;
 
       text-shadow:
-        0 8px 35px rgba(0,0,0,.2);
+        0 10px 35px
+        rgba(0,0,0,.25);
 
     }
 
 
     .hero-date {
 
-      font-family: "Playfair Display", serif;
+      margin-top:
+        28px;
 
-      font-size: clamp(.9rem, 4vw, 1.3rem);
+      font-family:
+        "Playfair Display",
+        serif;
 
-      letter-spacing: 5px;
+      font-size:
+        clamp(
+          .9rem,
+          3vw,
+          1.25rem
+        );
 
-      margin-top: 27px;
+      letter-spacing:
+        5px;
 
     }
 
 
     .scroll-indicator {
 
-      margin-top: 34px;
+      margin-top:
+        35px;
 
-      display: inline-flex;
+      display:
+        inline-flex;
 
-      flex-direction: column;
+      flex-direction:
+        column;
 
-      align-items: center;
+      align-items:
+        center;
 
-      gap: 8px;
+      gap:
+        10px;
 
-      font-size: .63rem;
+      font-size:
+        .6rem;
 
-      letter-spacing: 2px;
+      letter-spacing:
+        2px;
 
-      text-transform: uppercase;
+      text-transform:
+        uppercase;
 
-      opacity: .8;
+      opacity:
+        .85;
 
     }
 
@@ -507,370 +713,503 @@
     .scroll-line {
 
       width: 1px;
+
       height: 40px;
 
-      background: white;
-
-      animation: scrollAnim 1.8s infinite;
-
-    }
-
-
-
-    /* ==============================
-       GENERALES
-    ============================== */
-
-    section {
-
-      position: relative;
-
-      padding: 100px 20px;
-
-    }
-
-
-    .container {
-
-      width: min(1080px, 100%);
-
-      margin-inline: auto;
-
-    }
-
-
-    .section-mini {
-
-      text-align: center;
-
-      text-transform: uppercase;
-
-      font-size: .69rem;
-
-      letter-spacing: 5px;
-
-      color: var(--dorado);
-
-      margin-bottom: 12px;
-
-    }
-
-
-    .section-title {
-
-      text-align: center;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(2rem, 6vw, 3.6rem);
-
-      font-weight: 500;
-
-      color: var(--vino);
-
-      margin-bottom: 25px;
-
-    }
-
-
-    .script-title {
-
-      font-family: "Great Vibes", cursive;
-
-      font-size: clamp(3.8rem, 11vw, 6rem);
-
-      font-weight: 400;
-
-      text-align: center;
-
-      color: var(--vino);
-
-      line-height: 1;
-
-    }
-
-
-    .divider {
-
-      display: flex;
-
-      justify-content: center;
-      align-items: center;
-
-      gap: 12px;
-
-      margin: 20px auto 32px;
-
-    }
-
-
-    .divider span {
-
-      width: 50px;
-      height: 1px;
-
-      background: var(--dorado);
-
-    }
-
-
-    .divider i {
-
-      font-style: normal;
-
-      color: var(--dorado);
-
-    }
-
-
-
-    /* ==============================
-       MENSAJE
-    ============================== */
-
-    .message {
-
-      text-align: center;
-
-      background: var(--blanco);
-
-    }
-
-
-    .message p {
-
-      max-width: 720px;
-
-      margin: auto;
-
-      font-family: "Playfair Display", serif;
-
-      font-size: clamp(1.1rem, 3vw, 1.45rem);
-
-      line-height: 2;
-
-      color: #67585d;
-
-    }
-
-
-    .quote {
-
-      font-family: "Great Vibes", cursive;
-
-      font-size: 4.5rem;
-
-      line-height: .7;
-
-      color: var(--rosa);
-
-      margin-bottom: 20px;
-
-    }
-
-
-
-    /* ==============================
-       FOTO DESTACADA
-    ============================== */
-
-    .about-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
-
-      align-items: center;
-
-      gap: 70px;
-
-    }
-
-
-    .photo-placeholder {
-
-      min-height: 580px;
-
-      display: flex;
-
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-
-      position: relative;
-
-      border-radius: 4px;
-
-      color: var(--vino);
-
       background:
+        white;
 
-        linear-gradient(
-          135deg,
-          #f6e5e9,
-          #fffafa
-        );
+      animation:
+        scrollLine
+        1.8s
+        infinite;
 
-      border:
-        1px solid
-        rgba(196,161,107,.6);
+    }
 
-      box-shadow:
-        0 18px 55px
-        rgba(76,45,53,.1);
+
+
+    /* =====================================================
+       ESTRUCTURA GENERAL
+    ===================================================== */
+
+    main {
+
+      width: 100%;
 
       overflow: hidden;
 
     }
 
 
-    .photo-placeholder::before {
+    section {
 
-      content: "";
-
-      position: absolute;
-
-      inset: 14px;
-
-      border:
-        1px solid
-        rgba(196,161,107,.3);
-
-    }
-
-
-    .photo-placeholder-content {
-
-      z-index: 2;
+      width: 100%;
 
       position: relative;
 
-      padding: 30px;
+      padding:
+        100px
+        20px;
+
+      overflow: hidden;
 
     }
 
 
-    .photo-placeholder-icon {
+    .container {
 
-      display: block;
+      width:
+        min(
+          1080px,
+          100%
+        );
 
-      font-size: 3rem;
-
-      margin-bottom: 15px;
-
-      opacity: .55;
-
-    }
-
-
-    .photo-placeholder strong {
-
-      display: block;
-
-      font-family:
-        "Playfair Display",
-        serif;
-
-      font-size: 1.5rem;
-
-      font-weight: 500;
+      margin:
+        0 auto;
 
     }
 
 
-    .photo-placeholder small {
+    .section-mini {
 
-      display: block;
+      margin-bottom:
+        12px;
 
-      margin-top: 10px;
+      text-align:
+        center;
 
-      color: var(--gris);
+      color:
+        var(--dorado);
 
-      font-size: .72rem;
+      font-size:
+        .68rem;
 
-      letter-spacing: 2px;
+      font-weight:
+        500;
 
-      text-transform: uppercase;
+      letter-spacing:
+        5px;
 
-    }
-
-
-    .about-copy h2 {
-
-      font-family: "Great Vibes", cursive;
-
-      font-size: clamp(4rem, 8vw, 5.5rem);
-
-      font-weight: 400;
-
-      color: var(--vino);
-
-      line-height: 1;
+      text-transform:
+        uppercase;
 
     }
 
 
-    .about-copy p {
+    .section-title {
 
-      color: var(--gris);
+      margin-bottom:
+        25px;
 
-      line-height: 1.9;
+      text-align:
+        center;
 
-      margin-top: 18px;
-
-    }
-
-
-    .number15 {
-
-      position: absolute;
-
-      right: 4%;
-      bottom: 4%;
-
-      z-index: -1;
+      color:
+        var(--vino);
 
       font-family:
         "Playfair Display",
         serif;
 
       font-size:
-        clamp(7rem, 18vw, 13rem);
+        clamp(
+          2rem,
+          6vw,
+          3.5rem
+        );
 
-      line-height: .7;
+      font-weight:
+        500;
+
+    }
+
+
+    .script-title {
 
       color:
-        rgba(215,162,174,.15);
+        var(--vino);
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size:
+        clamp(
+          3.8rem,
+          10vw,
+          6rem
+        );
+
+      font-weight:
+        400;
+
+      line-height:
+        1;
+
+      text-align:
+        center;
+
+    }
+
+
+    .divider {
+
+      margin:
+        22px
+        auto
+        30px;
+
+      display:
+        flex;
+
+      justify-content:
+        center;
+
+      align-items:
+        center;
+
+      gap:
+        12px;
+
+    }
+
+
+    .divider span {
+
+      width:
+        50px;
+
+      height:
+        1px;
+
+      background:
+        var(--dorado);
+
+    }
+
+
+    .divider i {
+
+      color:
+        var(--dorado);
+
+      font-style:
+        normal;
 
     }
 
 
 
-    /* ==============================
+    /* =====================================================
+       MENSAJE
+    ===================================================== */
+
+    .message {
+
+      background:
+        var(--blanco);
+
+      text-align:
+        center;
+
+    }
+
+
+    .message-inner {
+
+      max-width:
+        760px;
+
+      margin:
+        auto;
+
+    }
+
+
+    .quote {
+
+      margin-bottom:
+        15px;
+
+      color:
+        var(--rosa);
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size:
+        5rem;
+
+      line-height:
+        .6;
+
+    }
+
+
+    .message p {
+
+      color:
+        #67585d;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(
+          1.08rem,
+          3vw,
+          1.4rem
+        );
+
+      line-height:
+        2;
+
+    }
+
+
+
+    /* =====================================================
+       FOTO 2
+    ===================================================== */
+
+    .story-section {
+
+      background:
+        linear-gradient(
+          180deg,
+          #fffdfd,
+          #f9f1f3
+        );
+
+    }
+
+
+    .story-grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        minmax(0, .9fr)
+        minmax(0, 1fr);
+
+      gap:
+        75px;
+
+      align-items:
+        center;
+
+    }
+
+
+    .portrait-frame {
+
+      width:
+        100%;
+
+      max-width:
+        470px;
+
+      margin:
+        auto;
+
+      aspect-ratio:
+        2 / 3;
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      border-radius:
+        4px;
+
+      background:
+        #ead9de;
+
+      box-shadow:
+        0 22px 55px
+        rgba(67,40,48,.14);
+
+    }
+
+
+    .portrait-frame::after {
+
+      content: "";
+
+      position:
+        absolute;
+
+      inset:
+        12px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.7);
+
+      pointer-events:
+        none;
+
+    }
+
+
+    .portrait-frame img {
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        cover;
+
+      object-position:
+        center;
+
+      transition:
+        transform .8s ease;
+
+    }
+
+
+    .portrait-frame:hover img {
+
+      transform:
+        scale(1.025);
+
+    }
+
+
+    .story-text {
+
+      position:
+        relative;
+
+      z-index: 2;
+
+    }
+
+
+    .story-text .section-mini {
+
+      text-align:
+        left;
+
+    }
+
+
+    .story-text h2 {
+
+      margin-top:
+        8px;
+
+      color:
+        var(--vino);
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size:
+        clamp(
+          4rem,
+          8vw,
+          5.5rem
+        );
+
+      font-weight:
+        400;
+
+      line-height:
+        .95;
+
+    }
+
+
+    .story-text p {
+
+      margin-top:
+        22px;
+
+      color:
+        var(--gris);
+
+      font-size:
+        .95rem;
+
+      line-height:
+        1.95;
+
+    }
+
+
+    .big-xv {
+
+      position:
+        absolute;
+
+      right:
+        -15px;
+
+      bottom:
+        -35px;
+
+      z-index:
+        -1;
+
+      color:
+        rgba(215,164,176,.15);
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        clamp(
+          8rem,
+          18vw,
+          14rem
+        );
+
+      line-height:
+        1;
+
+      user-select:
+        none;
+
+    }
+
+
+
+    /* =====================================================
        COUNTDOWN
-    ============================== */
+    ===================================================== */
 
     .countdown-section {
 
-      color: white;
+      color:
+        white;
 
-      text-align: center;
+      text-align:
+        center;
 
       background:
 
         radial-gradient(
           circle at top,
-          rgba(214,160,173,.32),
-          transparent 40%
+          rgba(215,164,176,.28),
+          transparent 45%
         ),
 
         linear-gradient(
           135deg,
-          #754452,
-          #482b34
+          #76505b,
+          #4b3039
         );
 
     }
@@ -879,7 +1218,8 @@
     .countdown-section
     .section-mini {
 
-      color: var(--dorado-claro);
+      color:
+        var(--dorado-claro);
 
     }
 
@@ -887,31 +1227,40 @@
     .countdown-section
     .section-title {
 
-      color: white;
+      color:
+        white;
 
     }
 
 
     .countdown {
 
-      max-width: 760px;
+      max-width:
+        760px;
 
       margin:
         50px
         auto
         0;
 
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(
+          4,
+          minmax(0, 1fr)
+        );
 
-      gap: 15px;
+      gap:
+        15px;
 
     }
 
 
     .time-box {
+
+      min-width: 0;
 
       padding:
         28px
@@ -919,51 +1268,229 @@
 
       border:
         1px solid
-        rgba(255,255,255,.25);
+        rgba(255,255,255,.22);
+
+      border-radius:
+        13px;
 
       background:
         rgba(255,255,255,.07);
 
-      backdrop-filter: blur(7px);
+      backdrop-filter:
+        blur(8px);
 
-      border-radius: 12px;
+      -webkit-backdrop-filter:
+        blur(8px);
 
     }
 
 
     .time-box strong {
 
-      display: block;
+      display:
+        block;
 
       font-family:
         "Playfair Display",
         serif;
 
       font-size:
-        clamp(2.2rem, 7vw, 4rem);
+        clamp(
+          2.2rem,
+          7vw,
+          4rem
+        );
 
-      font-weight: 500;
+      font-weight:
+        500;
 
     }
 
 
     .time-box span {
 
-      font-size: .64rem;
+      display:
+        block;
 
-      letter-spacing: 3px;
+      margin-top:
+        4px;
 
-      text-transform: uppercase;
+      font-size:
+        .62rem;
 
-      opacity: .78;
+      letter-spacing:
+        2px;
+
+      text-transform:
+        uppercase;
+
+      opacity:
+        .8;
 
     }
 
 
 
-    /* ==============================
+    /* =====================================================
+       FOTO 3
+    ===================================================== */
+
+    .feature-photo-section {
+
+      padding: 0;
+
+      background:
+        #4e323b;
+
+    }
+
+
+    .feature-photo {
+
+      position:
+        relative;
+
+      min-height:
+        85svh;
+
+      display:
+        flex;
+
+      align-items:
+        flex-end;
+
+      overflow:
+        hidden;
+
+      isolation:
+        isolate;
+
+    }
+
+
+    .feature-photo img {
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      z-index:
+        -3;
+
+      width:
+        100%;
+
+      height:
+        100%;
+
+      object-fit:
+        cover;
+
+      object-position:
+        center 25%;
+
+    }
+
+
+    .feature-photo::before {
+
+      content: "";
+
+      position:
+        absolute;
+
+      inset:
+        0;
+
+      z-index:
+        -2;
+
+      background:
+
+        linear-gradient(
+
+          180deg,
+
+          rgba(30,20,23,.03),
+
+          rgba(39,24,29,.08) 45%,
+
+          rgba(48,28,35,.82) 100%
+
+        );
+
+    }
+
+
+    .feature-photo-text {
+
+      width:
+        min(
+          760px,
+          calc(100% - 40px)
+        );
+
+      margin:
+        0 auto;
+
+      padding:
+        70px
+        20px;
+
+      text-align:
+        center;
+
+      color:
+        white;
+
+    }
+
+
+    .feature-photo-text p {
+
+      margin-bottom:
+        10px;
+
+      font-size:
+        .68rem;
+
+      letter-spacing:
+        5px;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .feature-photo-text h2 {
+
+      font-family:
+        "Great Vibes",
+        cursive;
+
+      font-size:
+        clamp(
+          4rem,
+          10vw,
+          6rem
+        );
+
+      font-weight:
+        400;
+
+      line-height:
+        1;
+
+    }
+
+
+
+    /* =====================================================
        DETALLES
-    ============================== */
+    ===================================================== */
 
     .details {
 
@@ -975,40 +1502,53 @@
 
     .details-grid {
 
-      display: grid;
+      margin-top:
+        55px;
+
+      display:
+        grid;
 
       grid-template-columns:
-        repeat(3, 1fr);
+        repeat(
+          3,
+          minmax(0, 1fr)
+        );
 
-      gap: 25px;
-
-      margin-top: 55px;
+      gap:
+        24px;
 
     }
 
 
     .detail-card {
 
+      min-width:
+        0;
+
       padding:
         42px
-        25px;
+        24px;
 
-      text-align: center;
-
-      border-radius: 18px;
+      text-align:
+        center;
 
       background:
-        rgba(255,255,255,.8);
+        rgba(255,255,255,.82);
 
       border:
         1px solid
-        rgba(196,161,107,.2);
+        rgba(198,165,110,.22);
+
+      border-radius:
+        18px;
 
       box-shadow:
-        0 10px 40px
-        rgba(110,68,79,.08);
+        0 12px 40px
+        rgba(93,58,68,.07);
 
-      transition: .35s ease;
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 
     }
 
@@ -1016,329 +1556,168 @@
     .detail-card:hover {
 
       transform:
-        translateY(-8px);
+        translateY(-7px);
 
       box-shadow:
-        0 18px 45px
-        rgba(110,68,79,.13);
+        0 20px 45px
+        rgba(93,58,68,.12);
 
     }
 
 
     .detail-icon {
 
-      width: 68px;
-      height: 68px;
+      width:
+        65px;
+
+      height:
+        65px;
 
       margin:
         0
         auto
         22px;
 
-      display: flex;
+      display:
+        flex;
 
-      justify-content: center;
-      align-items: center;
+      justify-content:
+        center;
 
-      border-radius: 50%;
+      align-items:
+        center;
 
       border:
         1px solid
         var(--dorado);
 
-      font-size: 26px;
+      border-radius:
+        50%;
 
-      color: var(--vino);
+      color:
+        var(--vino);
+
+      font-size:
+        25px;
 
     }
 
 
     .detail-card h3 {
 
+      margin-bottom:
+        14px;
+
+      color:
+        var(--vino);
+
       font-family:
         "Playfair Display",
         serif;
 
-      color: var(--vino);
+      font-size:
+        1.4rem;
 
-      font-size: 1.4rem;
-
-      margin-bottom: 13px;
+      font-weight:
+        500;
 
     }
 
 
     .detail-card p {
 
-      color: var(--gris);
+      color:
+        var(--gris);
 
-      font-size: .9rem;
+      font-size:
+        .88rem;
 
-      line-height: 1.8;
-
-    }
-
-
-    .btn {
-
-      display: inline-block;
-
-      margin-top: 23px;
-
-      padding:
-        13px
-        25px;
-
-      border:
-        1px solid
-        var(--vino);
-
-      color: var(--vino);
-
-      border-radius: 100px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 2px;
-
-      font-size: .7rem;
-
-      transition: .3s ease;
+      line-height:
+        1.8;
 
     }
 
 
-    .btn:hover {
 
-      color: white;
+    /* =====================================================
+       FOTO 4 + CIERRE
+    ===================================================== */
+
+    .closing-photo-section {
 
       background:
-        var(--vino);
+        #faf3f5;
 
     }
 
 
+    .closing-grid {
 
-    /* ==============================
-       DRESS CODE
-    ============================== */
-
-    .dress {
-
-      text-align: center;
-
-      background:
-        white;
-
-    }
-
-
-    .dress-icon {
-
-      font-size: 55px;
-
-      margin-bottom: 20px;
-
-      color: var(--vino);
-
-    }
-
-
-    .dress p {
-
-      max-width: 640px;
-
-      margin: auto;
-
-      color: var(--gris);
-
-      line-height: 1.9;
-
-    }
-
-
-    .colors {
-
-      display: flex;
-
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 14px;
-
-      margin: 32px 0 17px;
-
-    }
-
-
-    .color-dot {
-
-      width: 36px;
-      height: 36px;
-
-      border-radius: 50%;
-
-      box-shadow:
-        0 4px 12px
-        rgba(0,0,0,.1);
-
-    }
-
-
-
-    /* ==============================
-       GALERÍA
-    ============================== */
-
-    .gallery {
-
-      background: #fbf5f6;
-
-    }
-
-
-    .gallery-grid {
-
-      display: grid;
+      display:
+        grid;
 
       grid-template-columns:
-        repeat(12, 1fr);
+        minmax(0, 1fr)
+        minmax(0, .9fr);
 
-      grid-auto-rows:
-        220px;
+      gap:
+        70px;
 
-      gap: 12px;
-
-      margin-top: 45px;
-
-    }
-
-
-    .gallery-photo {
-
-      position: relative;
-
-      overflow: hidden;
-
-      display: flex;
-
-      justify-content: center;
-      align-items: center;
-
-      text-align: center;
-
-      color: var(--vino);
-
-      background:
-
-        linear-gradient(
-          135deg,
-          #f0d9df,
-          #fffafa
-        );
-
-      border:
-        1px solid
-        rgba(196,161,107,.35);
-
-      transition:
-        transform .4s ease,
-        box-shadow .4s ease;
+      align-items:
+        center;
 
     }
 
 
-    .gallery-photo:hover {
+    .closing-copy {
 
-      transform:
-        scale(.985);
-
-      box-shadow:
-        0 15px 35px
-        rgba(117,68,82,.12);
+      text-align:
+        center;
 
     }
 
 
-    .gallery-photo-content {
+    .closing-copy p {
 
-      padding: 20px;
+      max-width:
+        500px;
 
-    }
+      margin:
+        25px auto 0;
 
-
-    .gallery-photo-content span {
-
-      display: block;
-
-      font-size: 2rem;
-
-      margin-bottom: 10px;
-
-      opacity: .55;
-
-    }
-
-
-    .gallery-photo-content strong {
+      color:
+        var(--gris);
 
       font-family:
         "Playfair Display",
         serif;
 
-      font-size: 1.1rem;
+      font-size:
+        1.15rem;
 
-      font-weight: 500;
-
-    }
-
-
-    .gallery-photo:nth-child(1) {
-
-      grid-column: span 5;
-      grid-row: span 2;
-
-    }
-
-
-    .gallery-photo:nth-child(2) {
-
-      grid-column: span 7;
-
-    }
-
-
-    .gallery-photo:nth-child(3) {
-
-      grid-column: span 4;
-
-    }
-
-
-    .gallery-photo:nth-child(4) {
-
-      grid-column: span 3;
+      line-height:
+        1.9;
 
     }
 
 
 
-    /* ==============================
-       GOOGLE FORMS
-    ============================== */
+    /* =====================================================
+       RSVP
+    ===================================================== */
 
     .rsvp {
-
-      text-align: center;
 
       background:
 
         radial-gradient(
           circle at center,
-          #fff,
-          #f8ecef
+          #ffffff,
+          #f7eaee
         );
+
+      text-align:
+        center;
 
     }
 
@@ -1346,69 +1725,90 @@
     .rsvp-box {
 
       width:
-        min(680px, 100%);
+        min(
+          680px,
+          100%
+        );
 
-      margin: auto;
+      margin:
+        auto;
 
       padding:
         55px
         28px;
 
+      background:
+        rgba(255,255,255,.82);
+
       border:
         1px solid
-        rgba(196,161,107,.45);
-
-      background:
-        rgba(255,255,255,.8);
+        rgba(198,165,110,.45);
 
       box-shadow:
         0 20px 60px
-        rgba(117,68,82,.07);
+        rgba(93,58,68,.07);
 
     }
 
 
     .rsvp-box p {
 
-      max-width: 500px;
+      max-width:
+        500px;
 
-      margin: auto;
+      margin:
+        auto;
 
-      color: var(--gris);
+      color:
+        var(--gris);
 
-      line-height: 1.8;
+      line-height:
+        1.8;
 
     }
 
 
     .forms-btn {
 
-      display: inline-flex;
+      display:
+        inline-flex;
 
-      justify-content: center;
-      align-items: center;
+      justify-content:
+        center;
 
-      margin-top: 30px;
+      align-items:
+        center;
+
+      margin-top:
+        30px;
 
       padding:
         16px
-        31px;
+        30px;
 
       border-radius:
         100px;
 
-      color: white;
-
       background:
         var(--vino);
 
-      font-size: .72rem;
+      color:
+        white;
 
-      letter-spacing: 2px;
+      font-size:
+        .7rem;
 
-      text-transform: uppercase;
+      font-weight:
+        500;
 
-      transition: .3s ease;
+      letter-spacing:
+        2px;
+
+      text-transform:
+        uppercase;
+
+      transition:
+        .3s ease;
 
     }
 
@@ -1419,29 +1819,37 @@
         translateY(-4px);
 
       box-shadow:
-        0 12px 30px
-        rgba(117,68,82,.23);
+        0 14px 30px
+        rgba(117,75,87,.22);
 
     }
 
 
 
-    /* ==============================
+    /* =====================================================
        FOOTER
-    ============================== */
+    ===================================================== */
 
     footer {
+
+      width:
+        100%;
 
       padding:
         65px
         20px;
 
-      text-align: center;
+      overflow:
+        hidden;
 
-      color: white;
+      color:
+        white;
 
       background:
         var(--vino-oscuro);
+
+      text-align:
+        center;
 
     }
 
@@ -1453,45 +1861,53 @@
         cursive;
 
       font-size:
-        clamp(3.5rem, 10vw, 5rem);
+        clamp(
+          3.7rem,
+          10vw,
+          5rem
+        );
 
-      font-weight: 400;
+      font-weight:
+        400;
 
     }
 
 
     footer p {
 
-      margin-top: 10px;
+      margin-top:
+        10px;
 
-      opacity: .65;
+      font-size:
+        .65rem;
 
-      font-size: .67rem;
+      letter-spacing:
+        3px;
 
-      letter-spacing: 3px;
+      text-transform:
+        uppercase;
 
-      text-transform: uppercase;
+      opacity:
+        .68;
 
     }
 
 
 
-    /* ==============================
+    /* =====================================================
        ANIMACIONES
-    ============================== */
+    ===================================================== */
 
     .reveal {
 
       opacity: 0;
 
       transform:
-        translateY(40px);
+        translateY(35px);
 
       transition:
-
-        opacity .9s ease,
-
-        transform .9s ease;
+        opacity .85s ease,
+        transform .85s ease;
 
     }
 
@@ -1508,23 +1924,35 @@
 
     .petal {
 
-      position: fixed;
+      position:
+        fixed;
 
-      top: -50px;
+      top:
+        -40px;
 
-      z-index: 10;
+      z-index:
+        200;
 
-      pointer-events: none;
+      pointer-events:
+        none;
 
-      opacity: .4;
+      opacity:
+        .38;
 
       animation:
-        caer linear forwards;
+        fall
+        linear
+        forwards;
 
     }
 
 
-    @keyframes aparecer {
+
+    /* =====================================================
+       KEYFRAMES
+    ===================================================== */
+
+    @keyframes introEntrada {
 
       from {
 
@@ -1547,13 +1975,13 @@
     }
 
 
-    @keyframes pulso {
+    @keyframes musicPulse {
 
       0% {
 
         box-shadow:
           0 0 0 0
-          rgba(117,68,82,.4);
+          rgba(117,75,87,.4);
 
       }
 
@@ -1561,7 +1989,7 @@
 
         box-shadow:
           0 0 0 14px
-          rgba(117,68,82,0);
+          rgba(117,75,87,0);
 
       }
 
@@ -1569,14 +1997,14 @@
 
         box-shadow:
           0 0 0 0
-          rgba(117,68,82,0);
+          rgba(117,75,87,0);
 
       }
 
     }
 
 
-    @keyframes scrollAnim {
+    @keyframes scrollLine {
 
       0% {
 
@@ -1618,15 +2046,16 @@
     }
 
 
-    @keyframes caer {
+    @keyframes fall {
 
       to {
 
         transform:
           translateY(110vh)
-          rotate(540deg);
+          rotate(520deg);
 
-        opacity: 0;
+        opacity:
+          0;
 
       }
 
@@ -1634,12 +2063,13 @@
 
 
 
-    /* ==============================
-       TABLETS
-    ============================== */
+    /* =====================================================
+       TABLET
+    ===================================================== */
 
     @media
     (max-width: 900px) {
+
 
       section {
 
@@ -1650,23 +2080,19 @@
       }
 
 
-      .about-grid {
+      .story-grid,
+      .closing-grid {
 
-        gap: 40px;
-
-      }
-
-
-      .photo-placeholder {
-
-        min-height: 480px;
+        gap:
+          45px;
 
       }
 
 
       .details-grid {
 
-        gap: 15px;
+        gap:
+          15px;
 
       }
 
@@ -1674,12 +2100,64 @@
 
 
 
-    /* ==============================
-       CELULARES
-    ============================== */
+    /* =====================================================
+       MÓVIL
+    ===================================================== */
 
     @media
     (max-width: 700px) {
+
+
+      .intro-frame,
+      .hero-frame {
+
+        inset:
+          12px;
+
+      }
+
+
+      .intro-content {
+
+        padding:
+          25px
+          18px;
+
+      }
+
+
+      .intro-small {
+
+        letter-spacing:
+          3.5px;
+
+      }
+
+
+      .intro h2 {
+
+        letter-spacing:
+          5px;
+
+      }
+
+
+      .hero {
+
+        min-height:
+          100svh;
+
+      }
+
+
+      .hero-content {
+
+        padding:
+          90px
+          18px
+          50px;
+
+      }
 
 
       section {
@@ -1691,52 +2169,55 @@
       }
 
 
-      .intro::before {
-
-        inset: 12px;
-
-      }
-
-
-      .hero::after {
-
-        inset: 12px;
-
-      }
-
-
-      .hero-content {
-
-        padding:
-          80px
-          15px
-          50px;
-
-      }
-
-
-      .about-grid {
+      .story-grid {
 
         grid-template-columns:
           1fr;
 
-        gap: 40px;
+        gap:
+          45px;
 
       }
 
 
-      .photo-placeholder {
+      .story-text {
 
-        width: 100%;
-
-        min-height: 500px;
+        text-align:
+          center;
 
       }
 
 
-      .about-copy {
+      .story-text
+      .section-mini {
 
-        text-align: center;
+        text-align:
+          center;
+
+      }
+
+
+      .portrait-frame {
+
+        width:
+          min(
+            100%,
+            430px
+          );
+
+      }
+
+
+      .big-xv {
+
+        right:
+          50%;
+
+        bottom:
+          -40px;
+
+        transform:
+          translateX(50%);
 
       }
 
@@ -1744,9 +2225,21 @@
       .countdown {
 
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(
+            2,
+            minmax(0, 1fr)
+          );
 
-        gap: 10px;
+        gap:
+          9px;
+
+      }
+
+
+      .feature-photo {
+
+        min-height:
+          78svh;
 
       }
 
@@ -1759,31 +2252,29 @@
       }
 
 
-      .gallery-grid {
+      .closing-grid {
 
         grid-template-columns:
-          repeat(2, 1fr);
+          1fr;
 
-        grid-auto-rows:
-          220px;
-
-      }
-
-
-      .gallery-photo:nth-child(n) {
-
-        grid-column: auto;
-
-        grid-row: auto;
+        gap:
+          45px;
 
       }
 
 
-      .gallery-photo:nth-child(1) {
+      .closing-copy {
 
-        grid-column: span 2;
+        order:
+          2;
 
-        grid-row: span 2;
+      }
+
+
+      .closing-photo {
+
+        order:
+          1;
 
       }
 
@@ -1800,9 +2291,9 @@
 
 
 
-    /* ==============================
-       CELULARES PEQUEÑOS
-    ============================== */
+    /* =====================================================
+       TELÉFONOS PEQUEÑOS
+    ===================================================== */
 
     @media
     (max-width: 430px) {
@@ -1810,49 +2301,48 @@
 
       .intro h1 {
 
-        font-size: 4.8rem;
-
-      }
-
-
-      .intro h2 {
-
-        letter-spacing: 5px;
+        font-size:
+          4.9rem;
 
       }
 
 
       .hero h1 {
 
-        font-size: 5.2rem;
+        font-size:
+          5rem;
 
       }
 
 
       .hero-kicker {
 
-        letter-spacing: 4px;
+        letter-spacing:
+          4px;
 
       }
 
 
       .hero-date {
 
-        letter-spacing: 4px;
+        letter-spacing:
+          3.5px;
 
       }
 
 
-      .photo-placeholder {
+      .section-mini {
 
-        min-height: 430px;
+        letter-spacing:
+          3.5px;
 
       }
 
 
       .countdown {
 
-        gap: 7px;
+        gap:
+          7px;
 
       }
 
@@ -1868,65 +2358,76 @@
 
       .time-box span {
 
-        letter-spacing: 2px;
-
-        font-size: .58rem;
-
-      }
-
-
-      .gallery-grid {
-
-        grid-template-columns:
-          1fr;
-
-        grid-auto-rows:
-          300px;
-
-      }
-
-
-      .gallery-photo:nth-child(n) {
-
-        grid-column: 1;
-
-        grid-row: auto;
-
-      }
-
-
-      .gallery-photo:nth-child(1) {
-
-        grid-column: 1;
-
-        grid-row: auto;
+        font-size:
+          .57rem;
 
       }
 
 
       .forms-btn {
 
-        width: 100%;
+        width:
+          100%;
 
         padding:
           16px
-          15px;
+          12px;
 
       }
 
 
       .music-btn {
 
-        right: 13px;
-        bottom: 13px;
+        width:
+          48px;
 
-        width: 48px;
-        height: 48px;
+        height:
+          48px;
+
+        right:
+          13px;
+
+        bottom:
+          13px;
 
       }
 
     }
 
+
+
+    /* =====================================================
+       MENOS ANIMACIONES
+    ===================================================== */
+
+    @media
+    (prefers-reduced-motion: reduce) {
+
+
+      html {
+
+        scroll-behavior:
+          auto;
+
+      }
+
+
+      *,
+      *::before,
+      *::after {
+
+        animation-duration:
+          .01ms !important;
+
+        animation-iteration-count:
+          1 !important;
+
+        transition-duration:
+          .01ms !important;
+
+      }
+
+    }
 
   </style>
 
@@ -1938,23 +2439,44 @@
 
 
 
-  <!-- ==============================
-       PANTALLA DE APERTURA
-  ============================== -->
+  <!-- =====================================================
+       INTRO
+  ===================================================== -->
 
   <div
     class="intro"
     id="intro"
   >
 
-    <div class="intro-content">
+
+    <div
+      class="intro-photo"
+    ></div>
 
 
-      <div class="intro-small">
+    <div
+      class="intro-overlay"
+    ></div>
+
+
+    <div
+      class="intro-frame"
+    ></div>
+
+
+
+    <div
+      class="intro-content"
+    >
+
+
+      <p
+        class="intro-small"
+      >
 
         Tenemos el honor de invitarte
 
-      </div>
+      </p>
 
 
       <h1>
@@ -1971,57 +2493,45 @@
       </h2>
 
 
-      <div class="intro-line"></div>
+      <div
+        class="intro-line"
+      ></div>
 
 
       <button
         class="open-btn"
+        type="button"
         onclick="abrirInvitacion()"
       >
 
-        ABRIR INVITACIÓN
+        Abrir invitación
 
       </button>
 
 
     </div>
 
+
   </div>
 
 
 
-  <!-- ==============================
+  <!-- =====================================================
        MÚSICA
-  ============================== -->
+  ===================================================== -->
 
   <button
-
     class="music-btn"
-
     id="musicBtn"
-
+    type="button"
     onclick="toggleMusic()"
-
-    aria-label="Activar o pausar música"
-
+    aria-label="Reproducir o pausar música"
   >
 
     ♫
 
   </button>
 
-
-
-  <!--
-
-    Para agregar música:
-
-    1. Coloca un archivo llamado musica.mp3
-       junto al index.html.
-
-    2. GitHub Pages lo cargará automáticamente.
-
-  -->
 
   <audio
     id="music"
@@ -2038,17 +2548,39 @@
 
 
 
-  <!-- ==============================
-       PORTADA
-  ============================== -->
+  <!-- =====================================================
+       HERO
+  ===================================================== -->
 
-  <header class="hero">
+  <header
+    class="hero"
+  >
 
 
-    <div class="hero-content">
+    <div
+      class="hero-photo"
+    ></div>
 
 
-      <p class="hero-kicker">
+    <div
+      class="hero-overlay"
+    ></div>
+
+
+    <div
+      class="hero-frame"
+    ></div>
+
+
+
+    <div
+      class="hero-content"
+    >
+
+
+      <p
+        class="hero-kicker"
+      >
 
         Celebra conmigo
 
@@ -2062,18 +2594,24 @@
       </h1>
 
 
-      <p class="hero-date">
+      <p
+        class="hero-date"
+      >
 
-        03 • SEPT • 2026
+        05 • SEPT • 2026
 
       </p>
 
 
-      <div class="scroll-indicator">
+      <div
+        class="scroll-indicator"
+      >
 
         Descubre
 
-        <div class="scroll-line"></div>
+        <div
+          class="scroll-line"
+        ></div>
 
       </div>
 
@@ -2085,108 +2623,71 @@
 
 
 
-  <!-- ==============================
-       MENSAJE
-  ============================== -->
-
-  <section class="message">
-
-
-    <div
-      class="container reveal"
-    >
-
-
-      <div class="quote">
-
-        “
-
-      </div>
-
-
-      <p>
-
-        Hay momentos en la vida
-        que soñamos desde pequeñas,
-        momentos únicos que deseamos
-        compartir con las personas
-        que ocupan un lugar especial
-        en nuestro corazón.
-
-      </p>
-
-
-      <div class="divider">
-
-        <span></span>
-
-        <i>✦</i>
-
-        <span></span>
-
-      </div>
-
-
-      <p>
-
-        Hoy uno de esos sueños
-        comienza a hacerse realidad
-        y quiero que seas parte
-        de esta celebración.
-
-      </p>
-
-
-    </div>
-
-
-  </section>
+  <main>
 
 
 
-  <!-- ==============================
-       FOTO PRINCIPAL
-  ============================== -->
+    <!-- ===================================================
+         MENSAJE
+    ==================================================== -->
 
-  <section>
-
-
-    <div
-      class="container about-grid"
+    <section
+      class="message"
     >
 
 
       <div
-        class="photo-placeholder reveal"
+        class="container"
       >
 
 
         <div
-          class="photo-placeholder-content"
+          class="message-inner reveal"
         >
 
 
-          <span
-            class="photo-placeholder-icon"
+          <div
+            class="quote"
           >
 
-            ♡
+            “
 
-          </span>
-
-
-          <strong>
-
-            Aquí irá la foto
-
-          </strong>
+          </div>
 
 
-          <small>
+          <p>
 
-            Fotografía principal
+            Hay momentos en la vida
+            que soñamos desde pequeñas,
+            momentos únicos que deseamos
+            compartir con las personas
+            que ocupan un lugar especial
+            en nuestro corazón.
 
-          </small>
+          </p>
+
+
+          <div
+            class="divider"
+          >
+
+            <span></span>
+
+            <i>✦</i>
+
+            <span></span>
+
+          </div>
+
+
+          <p>
+
+            Hoy uno de esos sueños
+            comienza a hacerse realidad
+            y quiero que seas parte
+            de esta celebración.
+
+          </p>
 
 
         </div>
@@ -2195,163 +2696,271 @@
       </div>
 
 
+    </section>
+
+
+
+    <!-- ===================================================
+         FOTO 2
+    ==================================================== -->
+
+    <section
+      class="story-section"
+    >
+
 
       <div
-        class="about-copy reveal"
+        class="container story-grid"
       >
 
 
-        <div class="section-mini">
+        <div
+          class="portrait-frame reveal"
+        >
 
-          Un momento inolvidable
+          <img
+            src="foto2.jpeg"
+            alt="Iveth Mejía"
+          >
 
         </div>
 
 
-        <h2>
 
-          Mis quince
+        <div
+          class="story-text reveal"
+        >
+
+
+          <div
+            class="section-mini"
+          >
+
+            Un momento inolvidable
+
+          </div>
+
+
+          <h2>
+
+            Mis quince
+
+          </h2>
+
+
+          <p>
+
+            Con el corazón lleno de alegría,
+            doy gracias a Dios por permitirme
+            llegar a esta hermosa etapa
+            de mi vida.
+
+          </p>
+
+
+          <p>
+
+            Quiero compartir esta noche
+            tan especial junto a mi familia,
+            amigos y todas esas personas
+            que han formado parte de mi historia.
+
+          </p>
+
+
+          <div
+            class="big-xv"
+          >
+
+            XV
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CUENTA REGRESIVA
+    ==================================================== -->
+
+    <section
+      class="countdown-section"
+    >
+
+
+      <div
+        class="container reveal"
+      >
+
+
+        <div
+          class="section-mini"
+        >
+
+          Cada vez falta menos
+
+        </div>
+
+
+        <h2
+          class="section-title"
+        >
+
+          Cuenta regresiva
 
         </h2>
 
 
-        <p>
 
-          Con el corazón lleno de
-          alegría doy gracias a Dios
-          por permitirme llegar a
-          esta hermosa etapa de mi vida.
-
-        </p>
+        <div
+          class="countdown"
+        >
 
 
-        <p>
+          <div
+            class="time-box"
+          >
 
-          Quiero compartir esta noche
-          tan especial junto a mi
-          familia, amigos y todas esas
-          personas que han sido parte
-          de mi historia.
+            <strong
+              id="days"
+            >
 
-        </p>
+              00
+
+            </strong>
+
+            <span>
+
+              Días
+
+            </span>
+
+          </div>
+
+
+
+          <div
+            class="time-box"
+          >
+
+            <strong
+              id="hours"
+            >
+
+              00
+
+            </strong>
+
+            <span>
+
+              Horas
+
+            </span>
+
+          </div>
+
+
+
+          <div
+            class="time-box"
+          >
+
+            <strong
+              id="minutes"
+            >
+
+              00
+
+            </strong>
+
+            <span>
+
+              Minutos
+
+            </span>
+
+          </div>
+
+
+
+          <div
+            class="time-box"
+          >
+
+            <strong
+              id="seconds"
+            >
+
+              00
+
+            </strong>
+
+            <span>
+
+              Segundos
+
+            </span>
+
+          </div>
+
+
+        </div>
 
 
       </div>
 
 
-    </div>
-
-
-    <div class="number15">
-
-      XV
-
-    </div>
-
-
-  </section>
+    </section>
 
 
 
-  <!-- ==============================
-       CUENTA REGRESIVA
-  ============================== -->
+    <!-- ===================================================
+         FOTO 3
+    ==================================================== -->
 
-  <section
-    class="countdown-section"
-  >
-
-
-    <div
-      class="container reveal"
+    <section
+      class="feature-photo-section"
     >
 
 
-      <div class="section-mini">
-
-        Cada vez falta menos
-
-      </div>
+      <div
+        class="feature-photo"
+      >
 
 
-      <h2 class="section-title">
-
-        Cuenta regresiva
-
-      </h2>
-
-
-
-      <div class="countdown">
+        <img
+          src="foto3.jpeg"
+          alt="Iveth Mejía"
+          loading="lazy"
+        >
 
 
-        <div class="time-box">
-
-          <strong id="days">
-
-            00
-
-          </strong>
-
-          <span>
-
-            Días
-
-          </span>
-
-        </div>
+        <div
+          class="feature-photo-text reveal"
+        >
 
 
+          <p>
 
-        <div class="time-box">
+            Una noche para recordar
 
-          <strong id="hours">
-
-            00
-
-          </strong>
-
-          <span>
-
-            Horas
-
-          </span>
-
-        </div>
+          </p>
 
 
+          <h2>
 
-        <div class="time-box">
+            Un sueño hecho realidad
 
-          <strong id="minutes">
+          </h2>
 
-            00
-
-          </strong>
-
-          <span>
-
-            Minutos
-
-          </span>
-
-        </div>
-
-
-
-        <div class="time-box">
-
-          <strong id="seconds">
-
-            00
-
-          </strong>
-
-          <span>
-
-            Segundos
-
-          </span>
 
         </div>
 
@@ -2359,178 +2968,345 @@
       </div>
 
 
-    </div>
-
-
-  </section>
+    </section>
 
 
 
-  <!-- ==============================
-       DATOS DEL EVENTO
-  ============================== -->
+    <!-- ===================================================
+         DETALLES
+    ==================================================== -->
 
-  <section class="details">
-
-
-    <div class="container">
+    <section
+      class="details"
+    >
 
 
       <div
-        class="section-mini reveal"
+        class="container"
       >
 
-        Reserva esta fecha
+
+        <div
+          class="section-mini reveal"
+        >
+
+          Reserva esta fecha
+
+        </div>
+
+
+        <h2
+          class="section-title reveal"
+        >
+
+          Detalles de la celebración
+
+        </h2>
+
+
+
+        <div
+          class="details-grid"
+        >
+
+
+
+          <!-- FECHA -->
+
+          <div
+            class="detail-card reveal"
+          >
+
+
+            <div
+              class="detail-icon"
+            >
+
+              ♡
+
+            </div>
+
+
+            <h3>
+
+              Fecha
+
+            </h3>
+
+
+            <p>
+
+              Sábado
+
+              <br>
+
+              <strong>
+
+                5 de septiembre de 2026
+
+              </strong>
+
+            </p>
+
+
+          </div>
+
+
+
+          <!-- HORA -->
+
+          <div
+            class="detail-card reveal"
+          >
+
+
+            <div
+              class="detail-icon"
+            >
+
+              ◷
+
+            </div>
+
+
+            <h3>
+
+              Hora
+
+            </h3>
+
+
+            <p>
+
+              Recepción
+
+              <br>
+
+              <strong>
+
+                6:00 PM
+
+              </strong>
+
+            </p>
+
+
+          </div>
+
+
+
+          <!-- LUGAR -->
+
+          <div
+            class="detail-card reveal"
+          >
+
+
+            <div
+              class="detail-icon"
+            >
+
+              ◇
+
+            </div>
+
+
+            <h3>
+
+              Lugar
+
+            </h3>
+
+
+            <p>
+
+              Salón de Conferencias
+
+              <br>
+
+              <strong>
+
+                Ministerio Internacional Hebreos
+
+              </strong>
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
 
       </div>
 
 
-      <h2
-        class="section-title reveal"
+    </section>
+
+
+
+    <!-- ===================================================
+         FOTO 4
+    ==================================================== -->
+
+    <section
+      class="closing-photo-section"
+    >
+
+
+      <div
+        class="container closing-grid"
       >
 
-        Detalles de la celebración
 
-      </h2>
-
-
-
-      <div class="details-grid">
-
-
-        <!-- FECHA -->
 
         <div
-          class="detail-card reveal"
+          class="closing-copy reveal"
         >
 
 
-          <div class="detail-icon">
-
-            ♡
-
-          </div>
-
-
-          <h3>
-
-            Fecha
-
-          </h3>
-
-
-          <p>
-
-            Jueves
-
-            <br>
-
-            <strong>
-
-              3 de septiembre de 2026
-
-            </strong>
-
-          </p>
-
-
-        </div>
-
-
-
-        <!-- HORA -->
-
-        <div
-          class="detail-card reveal"
-        >
-
-
-          <div class="detail-icon">
-
-            ◷
-
-          </div>
-
-
-          <h3>
-
-            Hora
-
-          </h3>
-
-
-          <p>
-
-            Próximamente
-
-            <br>
-
-            <strong>
-
-              Aquí irá la hora
-
-            </strong>
-
-          </p>
-
-
-        </div>
-
-
-
-        <!-- UBICACIÓN -->
-
-        <div
-          class="detail-card reveal"
-        >
-
-
-          <div class="detail-icon">
-
-            ♧
-
-          </div>
-
-
-          <h3>
-
-            Lugar
-
-          </h3>
-
-
-          <p>
-
-            Aquí irá el nombre
-
-            <br>
-
-            del salón o ubicación
-
-          </p>
-
-
-          <!--
-
-            Reemplazar el enlace
-            por el enlace real
-            de Google Maps.
-
-          -->
-
-          <a
-
-            href="https://maps.google.com/"
-
-            target="_blank"
-
-            rel="noopener noreferrer"
-
-            class="btn"
-
+          <div
+            class="section-mini"
           >
 
-            Ver ubicación
+            Un recuerdo para siempre
+
+          </div>
+
+
+          <h2
+            class="script-title"
+          >
+
+            Te espero
+
+          </h2>
+
+
+          <div
+            class="divider"
+          >
+
+            <span></span>
+
+            <i>✦</i>
+
+            <span></span>
+
+          </div>
+
+
+          <p>
+
+            Los mejores momentos
+            de la vida se vuelven
+            inolvidables cuando
+            los compartimos con
+            personas especiales.
+
+          </p>
+
+
+        </div>
+
+
+
+        <div
+          class="portrait-frame closing-photo reveal"
+        >
+
+
+          <img
+            src="foto4.jpeg"
+            alt="Iveth Mejía"
+            loading="lazy"
+          >
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CONFIRMACIÓN GOOGLE FORMS
+    ==================================================== -->
+
+    <section
+      class="rsvp"
+    >
+
+
+      <div
+        class="container"
+      >
+
+
+        <div
+          class="rsvp-box reveal"
+        >
+
+
+          <div
+            class="section-mini"
+          >
+
+            Esperamos contar contigo
+
+          </div>
+
+
+          <h2
+            class="script-title"
+          >
+
+            Confirma tu asistencia
+
+          </h2>
+
+
+          <div
+            class="divider"
+          >
+
+            <span></span>
+
+            <i>✦</i>
+
+            <span></span>
+
+          </div>
+
+
+          <p>
+
+            Tu presencia hará que
+            esta celebración sea
+            aún más especial.
+
+            <br><br>
+
+            Por favor confirma tu
+            asistencia mediante
+            el siguiente formulario.
+
+          </p>
+
+
+          <a
+            class="forms-btn"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSf8jz91mIRRgccwVkIi0zNC7Zc-K36IbUAgHlAMEeIe62cJBA/viewform?usp=publish-editor"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            Confirmar asistencia
 
           </a>
 
@@ -2541,387 +3317,17 @@
       </div>
 
 
-    </div>
+    </section>
 
 
-  </section>
 
+  </main>
 
 
-  <!-- ==============================
-       DRESS CODE
-  ============================== -->
 
-  <section class="dress">
-
-
-    <div
-      class="container reveal"
-    >
-
-
-      <div class="section-mini">
-
-        Para esta noche especial
-
-      </div>
-
-
-      <h2 class="section-title">
-
-        Dress Code
-
-      </h2>
-
-
-      <div class="dress-icon">
-
-        ♕
-
-      </div>
-
-
-      <h3
-        style="
-        font-family:'Playfair Display', serif;
-        color:var(--vino);
-        font-size:1.6rem;
-        margin-bottom:15px;
-        "
-      >
-
-        Elegante
-
-      </h3>
-
-
-      <p>
-
-        Será una noche especial.
-        Te invitamos a lucir
-        tu mejor atuendo y acompañarnos
-        con vestimenta formal.
-
-      </p>
-
-
-      <div class="colors">
-
-
-        <div
-
-          class="color-dot"
-
-          style="
-          background:#754452;
-          "
-
-        ></div>
-
-
-        <div
-
-          class="color-dot"
-
-          style="
-          background:#d6a0ad;
-          "
-
-        ></div>
-
-
-        <div
-
-          class="color-dot"
-
-          style="
-          background:#c4a16b;
-          "
-
-        ></div>
-
-
-      </div>
-
-
-      <p
-        style="
-        font-size:.72rem;
-        text-transform:uppercase;
-        letter-spacing:2px;
-        margin-top:14px;
-        "
-      >
-
-        Paleta de referencia
-
-      </p>
-
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- ==============================
-       GALERÍA DE 4 FOTOS
-  ============================== -->
-
-  <section class="gallery">
-
-
-    <div class="container">
-
-
-      <div
-        class="section-mini reveal"
-      >
-
-        Próximamente
-
-      </div>
-
-
-      <h2
-        class="section-title reveal"
-      >
-
-        Galería
-
-      </h2>
-
-
-
-      <div class="gallery-grid">
-
-
-        <!-- FOTO 1 -->
-
-        <div
-          class="gallery-photo reveal"
-        >
-
-
-          <div
-            class="gallery-photo-content"
-          >
-
-            <span>
-
-              ♡
-
-            </span>
-
-            <strong>
-
-              Aquí irá la foto 1
-
-            </strong>
-
-          </div>
-
-
-        </div>
-
-
-
-        <!-- FOTO 2 -->
-
-        <div
-          class="gallery-photo reveal"
-        >
-
-
-          <div
-            class="gallery-photo-content"
-          >
-
-            <span>
-
-              ♡
-
-            </span>
-
-            <strong>
-
-              Aquí irá la foto 2
-
-            </strong>
-
-          </div>
-
-
-        </div>
-
-
-
-        <!-- FOTO 3 -->
-
-        <div
-          class="gallery-photo reveal"
-        >
-
-
-          <div
-            class="gallery-photo-content"
-          >
-
-            <span>
-
-              ♡
-
-            </span>
-
-            <strong>
-
-              Aquí irá la foto 3
-
-            </strong>
-
-          </div>
-
-
-        </div>
-
-
-
-        <!-- FOTO 4 -->
-
-        <div
-          class="gallery-photo reveal"
-        >
-
-
-          <div
-            class="gallery-photo-content"
-          >
-
-            <span>
-
-              ♡
-
-            </span>
-
-            <strong>
-
-              Aquí irá la foto 4
-
-            </strong>
-
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- ==============================
-       CONFIRMAR ASISTENCIA
-  ============================== -->
-
-  <section class="rsvp">
-
-
-    <div class="container">
-
-
-      <div
-        class="rsvp-box reveal"
-      >
-
-
-        <div class="section-mini">
-
-          Esperamos contar contigo
-
-        </div>
-
-
-        <h2 class="script-title">
-
-          Confirma tu asistencia
-
-        </h2>
-
-
-        <div class="divider">
-
-          <span></span>
-
-          <i>✦</i>
-
-          <span></span>
-
-        </div>
-
-
-        <p>
-
-          Tu presencia hará
-          que esta celebración
-          sea aún más especial.
-
-          <br><br>
-
-          Por favor confirma
-          tu asistencia mediante
-          el siguiente formulario.
-
-        </p>
-
-
-
-        <!--
-
-          IMPORTANTE:
-
-          AQUÍ DEBES PEGAR
-          EL ENLACE REAL
-          DE GOOGLE FORMS.
-
-        -->
-
-        <a
-
-          class="forms-btn"
-
-          href="https://forms.google.com/"
-
-          target="_blank"
-
-          rel="noopener noreferrer"
-
-        >
-
-          Confirmar asistencia
-
-        </a>
-
-
-      </div>
-
-
-    </div>
-
-
-  </section>
-
-
-
-  <!-- ==============================
+  <!-- =====================================================
        FOOTER
-  ============================== -->
+  ===================================================== -->
 
   <footer>
 
@@ -2935,7 +3341,7 @@
 
     <p>
 
-      Mis XV • 03.09.2026
+      Mis XV • 05.09.2026
 
     </p>
 
@@ -2944,16 +3350,17 @@
 
 
 
-  <!-- ==============================
+  <!-- =====================================================
        JAVASCRIPT
-  ============================== -->
+  ===================================================== -->
 
   <script>
 
 
-    /* ==============================
+    /* =====================================================
        ABRIR INVITACIÓN
-    ============================== */
+    ===================================================== */
+
 
     function abrirInvitacion() {
 
@@ -2976,6 +3383,7 @@
         );
 
 
+
       intro.classList.add(
         "ocultar"
       );
@@ -2994,9 +3402,14 @@
         0.35;
 
 
+
       musica.play()
 
         .then(() => {
+
+
+          musicBtn.innerHTML =
+            "❚❚";
 
 
           musicBtn.classList.add(
@@ -3004,11 +3417,8 @@
           );
 
 
-          musicBtn.innerHTML =
-            "❚❚";
-
-
         })
+
 
         .catch(() => {
 
@@ -3020,16 +3430,28 @@
         });
 
 
+
       crearPetalos();
+
+
+      setTimeout(() => {
+
+
+        intro.style.display =
+          "none";
+
+
+      }, 1000);
 
 
     }
 
 
 
-    /* ==============================
-       MÚSICA
-    ============================== */
+    /* =====================================================
+       CONTROL DE MÚSICA
+    ===================================================== */
+
 
     function toggleMusic() {
 
@@ -3044,6 +3466,7 @@
         document.getElementById(
           "musicBtn"
         );
+
 
 
       if (
@@ -3085,27 +3508,27 @@
 
 
 
-    /* ==============================
+    /* =====================================================
        CUENTA REGRESIVA
+    ===================================================== */
 
-       Septiembre = mes 8
-       porque JavaScript empieza
-       a contar los meses desde 0.
 
-       Enero = 0
-       Septiembre = 8
+    /*
+      5 DE SEPTIEMBRE DE 2026
+      6:00 PM
 
-       Por ahora se ha colocado
-       7:00 PM como hora provisional.
-    ============================== */
+      Septiembre = 8
+      porque JavaScript
+      cuenta los meses desde 0.
+    */
 
 
     const fechaEvento =
       new Date(
         2026,
         8,
-        3,
-        19,
+        5,
+        18,
         0,
         0
       ).getTime();
@@ -3131,22 +3554,26 @@
 
         document.getElementById(
           "days"
-        ).innerText = "00";
+        ).textContent =
+          "00";
 
 
         document.getElementById(
           "hours"
-        ).innerText = "00";
+        ).textContent =
+          "00";
 
 
         document.getElementById(
           "minutes"
-        ).innerText = "00";
+        ).textContent =
+          "00";
 
 
         document.getElementById(
           "seconds"
-        ).innerText = "00";
+        ).textContent =
+          "00";
 
 
         return;
@@ -3186,6 +3613,7 @@
               60 *
               24
             )
+
           )
 
           /
@@ -3212,6 +3640,7 @@
               60 *
               60
             )
+
           )
 
           /
@@ -3236,6 +3665,7 @@
               1000 *
               60
             )
+
           )
 
           /
@@ -3248,7 +3678,7 @@
 
       document.getElementById(
         "days"
-      ).innerText =
+      ).textContent =
 
         String(
           dias
@@ -3261,7 +3691,7 @@
 
       document.getElementById(
         "hours"
-      ).innerText =
+      ).textContent =
 
         String(
           horas
@@ -3274,7 +3704,7 @@
 
       document.getElementById(
         "minutes"
-      ).innerText =
+      ).textContent =
 
         String(
           minutos
@@ -3287,7 +3717,7 @@
 
       document.getElementById(
         "seconds"
-      ).innerText =
+      ).textContent =
 
         String(
           segundos
@@ -3305,18 +3735,15 @@
 
 
     setInterval(
-
       actualizarContador,
-
       1000
-
     );
 
 
 
-    /* ==============================
+    /* =====================================================
        ANIMACIONES AL SCROLL
-    ============================== */
+    ===================================================== */
 
 
     const elementosReveal =
@@ -3336,7 +3763,7 @@
 
           entries.forEach(
 
-            (entry) => {
+            entry => {
 
 
               if (
@@ -3351,6 +3778,11 @@
                   );
 
 
+                observer.unobserve(
+                  entry.target
+                );
+
+
               }
 
 
@@ -3363,7 +3795,8 @@
 
         {
 
-          threshold: 0.1
+          threshold:
+            0.12
 
         }
 
@@ -3371,30 +3804,30 @@
 
 
 
-    elementosReveal
-      .forEach(
+    elementosReveal.forEach(
 
-        (elemento) => {
-
-
-          observer.observe(
-            elemento
-          );
+      elemento => {
 
 
-        }
+        observer.observe(
+          elemento
+        );
 
-      );
+
+      }
+
+    );
 
 
 
-    /* ==============================
+    /* =====================================================
        PARTÍCULAS
-    ============================== */
+    ===================================================== */
 
 
     let petalosActivos =
       false;
+
 
 
     function crearPetalos() {
@@ -3417,17 +3850,14 @@
       setInterval(() => {
 
 
-        /*
-        Reducimos partículas
-        en celulares pequeños
-        para mejorar rendimiento.
-        */
-
-
         if (
+
           window.innerWidth < 500
+
           &&
-          Math.random() > .55
+
+          Math.random() > .45
+
         ) {
 
           return;
@@ -3437,9 +3867,11 @@
 
 
         const petalo =
+
           document.createElement(
             "div"
           );
+
 
 
         petalo.classList.add(
@@ -3447,37 +3879,46 @@
         );
 
 
-        petalo.innerHTML =
+        petalo.textContent =
           "♡";
+
 
 
         petalo.style.left =
 
-          Math.random() *
-          100 +
+          (
+            Math.random() *
+            100
+          )
+          +
           "vw";
+
 
 
         petalo.style.fontSize =
 
           (
             Math.random() *
-            10 +
+            9
+            +
             7
           )
           +
           "px";
 
 
+
         petalo.style.animationDuration =
 
           (
             Math.random() *
-            5 +
+            5
+            +
             6
           )
           +
           "s";
+
 
 
         petalo.style.color =
@@ -3486,18 +3927,17 @@
 
           ?
 
-          "#d6a0ad"
+          "#d7a4b0"
 
           :
 
-          "#c4a16b";
+          "#c6a56e";
 
 
 
-        document.body
-          .appendChild(
-            petalo
-          );
+        document.body.appendChild(
+          petalo
+        );
 
 
 
@@ -3511,7 +3951,7 @@
 
 
 
-      }, 850);
+      }, 950);
 
 
     }
