@@ -62,7 +62,6 @@
     }
 
 
-
     /* =====================================================
        RESET
     ===================================================== */
@@ -107,7 +106,6 @@
     body.no-scroll {
 
       overflow: hidden;
-
       height: 100dvh;
 
     }
@@ -116,9 +114,7 @@
     img {
 
       display: block;
-
       width: 100%;
-
       max-width: 100%;
 
     }
@@ -127,7 +123,6 @@
     a {
 
       color: inherit;
-
       text-decoration: none;
 
     }
@@ -140,9 +135,8 @@
     }
 
 
-
     /* =====================================================
-       INTRO / PORTADA CERRADA
+       INTRO
     ===================================================== */
 
     .intro {
@@ -150,23 +144,19 @@
       position: fixed;
 
       top: 0;
-
       left: 0;
 
       width: 100vw;
-
       height: 100dvh;
 
       z-index: 99999;
 
       isolation: isolate;
-
       overflow: hidden;
 
       display: flex;
 
       justify-content: center;
-
       align-items: center;
 
       background:
@@ -220,11 +210,11 @@
 
           180deg,
 
-          rgba(51, 29, 36, .63) 0%,
+          rgba(51,29,36,.63) 0%,
 
-          rgba(68, 39, 48, .76) 45%,
+          rgba(68,39,48,.76) 45%,
 
-          rgba(57, 33, 41, .96) 100%
+          rgba(57,33,41,.96) 100%
 
         );
 
@@ -251,7 +241,6 @@
     .intro.ocultar {
 
       opacity: 0;
-
       visibility: hidden;
 
       pointer-events: none;
@@ -441,7 +430,6 @@
     }
 
 
-
     /* =====================================================
        BOTÓN MÚSICA
     ===================================================== */
@@ -451,23 +439,19 @@
       position: fixed;
 
       right: 18px;
-
       bottom: 18px;
 
       z-index: 5000;
 
       width: 52px;
-
       height: 52px;
 
       border: none;
-
       border-radius: 50%;
 
       display: none;
 
       justify-content: center;
-
       align-items: center;
 
       color:
@@ -494,9 +478,8 @@
     }
 
 
-
     /* =====================================================
-       HERO PRINCIPAL
+       HERO
     ===================================================== */
 
     .hero {
@@ -512,7 +495,6 @@
       display: flex;
 
       align-items: flex-end;
-
       justify-content: center;
 
       isolation: isolate;
@@ -712,9 +694,11 @@
 
     .scroll-line {
 
-      width: 1px;
+      width:
+        1px;
 
-      height: 40px;
+      height:
+        40px;
 
       background:
         white;
@@ -727,31 +711,35 @@
     }
 
 
-
     /* =====================================================
-       ESTRUCTURA GENERAL
+       GENERALES
     ===================================================== */
 
     main {
 
-      width: 100%;
+      width:
+        100%;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
     }
 
 
     section {
 
-      width: 100%;
+      width:
+        100%;
 
-      position: relative;
+      position:
+        relative;
 
       padding:
         100px
         20px;
 
-      overflow: hidden;
+      overflow:
+        hidden;
 
     }
 
@@ -899,7 +887,6 @@
     }
 
 
-
     /* =====================================================
        MENSAJE
     ===================================================== */
@@ -967,7 +954,6 @@
         2;
 
     }
-
 
 
     /* =====================================================
@@ -1090,7 +1076,8 @@
       position:
         relative;
 
-      z-index: 2;
+      z-index:
+        2;
 
     }
 
@@ -1185,7 +1172,6 @@
     }
 
 
-
     /* =====================================================
        COUNTDOWN
     ===================================================== */
@@ -1260,7 +1246,8 @@
 
     .time-box {
 
-      min-width: 0;
+      min-width:
+        0;
 
       padding:
         28px
@@ -1330,14 +1317,14 @@
     }
 
 
-
     /* =====================================================
        FOTO 3
     ===================================================== */
 
     .feature-photo-section {
 
-      padding: 0;
+      padding:
+        0;
 
       background:
         #4e323b;
@@ -1485,7 +1472,6 @@
         1;
 
     }
-
 
 
     /* =====================================================
@@ -1638,9 +1624,125 @@
     }
 
 
+    /* =====================================================
+       REGALOS
+    ===================================================== */
+
+    .gifts {
+
+      background:
+        white;
+
+      text-align:
+        center;
+
+    }
+
+
+    .gift-box {
+
+      width:
+        min(
+          680px,
+          100%
+        );
+
+      margin:
+        auto;
+
+      padding:
+        50px
+        28px;
+
+      border:
+        1px solid
+        rgba(198,165,110,.35);
+
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff,
+          #fff8fa
+        );
+
+      box-shadow:
+        0 18px 50px
+        rgba(93,58,68,.06);
+
+    }
+
+
+    .gift-icon {
+
+      width:
+        72px;
+
+      height:
+        72px;
+
+      margin:
+        0 auto
+        20px;
+
+      display:
+        flex;
+
+      justify-content:
+        center;
+
+      align-items:
+        center;
+
+      border-radius:
+        50%;
+
+      border:
+        1px solid
+        var(--dorado);
+
+      color:
+        var(--vino);
+
+      font-size:
+        27px;
+
+    }
+
+
+    .gift-box p {
+
+      max-width:
+        520px;
+
+      margin:
+        auto;
+
+      color:
+        var(--gris);
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-size:
+        1.05rem;
+
+      line-height:
+        1.9;
+
+    }
+
+
+    .gift-box strong {
+
+      color:
+        var(--vino);
+
+    }
+
 
     /* =====================================================
-       FOTO 4 + CIERRE
+       FOTO 4
     ===================================================== */
 
     .closing-photo-section {
@@ -1699,7 +1801,6 @@
         1.9;
 
     }
-
 
 
     /* =====================================================
@@ -1825,7 +1926,6 @@
     }
 
 
-
     /* =====================================================
        FOOTER
     ===================================================== */
@@ -1893,14 +1993,14 @@
     }
 
 
-
     /* =====================================================
        ANIMACIONES
     ===================================================== */
 
     .reveal {
 
-      opacity: 0;
+      opacity:
+        0;
 
       transform:
         translateY(35px);
@@ -1914,7 +2014,8 @@
 
     .reveal.active {
 
-      opacity: 1;
+      opacity:
+        1;
 
       transform:
         translateY(0);
@@ -1947,16 +2048,12 @@
     }
 
 
-
-    /* =====================================================
-       KEYFRAMES
-    ===================================================== */
-
     @keyframes introEntrada {
 
       from {
 
-        opacity: 0;
+        opacity:
+          0;
 
         transform:
           translateY(25px);
@@ -1965,7 +2062,8 @@
 
       to {
 
-        opacity: 1;
+        opacity:
+          1;
 
         transform:
           translateY(0);
@@ -2062,7 +2160,6 @@
     }
 
 
-
     /* =====================================================
        TABLET
     ===================================================== */
@@ -2099,9 +2196,8 @@
     }
 
 
-
     /* =====================================================
-       MÓVIL
+       CELULAR
     ===================================================== */
 
     @media
@@ -2227,7 +2323,7 @@
         grid-template-columns:
           repeat(
             2,
-            minmax(0, 1fr)
+            minmax(0,1fr)
           );
 
         gap:
@@ -2279,7 +2375,8 @@
       }
 
 
-      .rsvp-box {
+      .rsvp-box,
+      .gift-box {
 
         padding:
           45px
@@ -2290,9 +2387,8 @@
     }
 
 
-
     /* =====================================================
-       TELÉFONOS PEQUEÑOS
+       CELULAR PEQUEÑO
     ===================================================== */
 
     @media
@@ -2395,9 +2491,8 @@
     }
 
 
-
     /* =====================================================
-       MENOS ANIMACIONES
+       REDUCIR MOVIMIENTO
     ===================================================== */
 
     @media
@@ -2434,9 +2529,7 @@
 </head>
 
 
-
 <body class="no-scroll">
-
 
 
   <!-- =====================================================
@@ -2462,7 +2555,6 @@
     <div
       class="intro-frame"
     ></div>
-
 
 
     <div
@@ -2515,7 +2607,6 @@
   </div>
 
 
-
   <!-- =====================================================
        MÚSICA
   ===================================================== -->
@@ -2547,7 +2638,6 @@
   </audio>
 
 
-
   <!-- =====================================================
        HERO
   ===================================================== -->
@@ -2570,7 +2660,6 @@
     <div
       class="hero-frame"
     ></div>
-
 
 
     <div
@@ -2622,9 +2711,7 @@
   </header>
 
 
-
   <main>
-
 
 
     <!-- ===================================================
@@ -2699,7 +2786,6 @@
     </section>
 
 
-
     <!-- ===================================================
          FOTO 2
     ==================================================== -->
@@ -2724,7 +2810,6 @@
           >
 
         </div>
-
 
 
         <div
@@ -2786,7 +2871,6 @@
     </section>
 
 
-
     <!-- ===================================================
          CUENTA REGRESIVA
     ==================================================== -->
@@ -2819,7 +2903,6 @@
         </h2>
 
 
-
         <div
           class="countdown"
         >
@@ -2832,19 +2915,14 @@
             <strong
               id="days"
             >
-
               00
-
             </strong>
 
             <span>
-
               Días
-
             </span>
 
           </div>
-
 
 
           <div
@@ -2854,19 +2932,14 @@
             <strong
               id="hours"
             >
-
               00
-
             </strong>
 
             <span>
-
               Horas
-
             </span>
 
           </div>
-
 
 
           <div
@@ -2876,19 +2949,14 @@
             <strong
               id="minutes"
             >
-
               00
-
             </strong>
 
             <span>
-
               Minutos
-
             </span>
 
           </div>
-
 
 
           <div
@@ -2898,15 +2966,11 @@
             <strong
               id="seconds"
             >
-
               00
-
             </strong>
 
             <span>
-
               Segundos
-
             </span>
 
           </div>
@@ -2919,7 +2983,6 @@
 
 
     </section>
-
 
 
     <!-- ===================================================
@@ -2971,7 +3034,6 @@
     </section>
 
 
-
     <!-- ===================================================
          DETALLES
     ==================================================== -->
@@ -3004,11 +3066,9 @@
         </h2>
 
 
-
         <div
           class="details-grid"
         >
-
 
 
           <!-- FECHA -->
@@ -3052,7 +3112,6 @@
           </div>
 
 
-
           <!-- HORA -->
 
           <div
@@ -3084,7 +3143,7 @@
 
               <strong>
 
-                6:00 PM
+                6:30 PM
 
               </strong>
 
@@ -3092,7 +3151,6 @@
 
 
           </div>
-
 
 
           <!-- LUGAR -->
@@ -3145,6 +3203,90 @@
     </section>
 
 
+    <!-- ===================================================
+         REGALOS
+    ==================================================== -->
+
+    <section
+      class="gifts"
+    >
+
+
+      <div
+        class="container"
+      >
+
+
+        <div
+          class="gift-box reveal"
+        >
+
+
+          <div
+            class="gift-icon"
+          >
+
+            ♡
+
+          </div>
+
+
+          <div
+            class="section-mini"
+          >
+
+            Un pequeño detalle
+
+          </div>
+
+
+          <h2
+            class="section-title"
+          >
+
+            Regalos
+
+          </h2>
+
+
+          <div
+            class="divider"
+          >
+
+            <span></span>
+
+            <i>✦</i>
+
+            <span></span>
+
+          </div>
+
+
+          <p>
+
+            Tu presencia es el regalo
+            más importante en este día.
+
+            <br><br>
+
+            Si deseas obsequiarme
+            algún detalle,
+            <strong>
+              preferiblemente agradecemos
+              que sea en efectivo.
+            </strong>
+
+          </p>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
 
     <!-- ===================================================
          FOTO 4
@@ -3158,7 +3300,6 @@
       <div
         class="container closing-grid"
       >
-
 
 
         <div
@@ -3211,7 +3352,6 @@
         </div>
 
 
-
         <div
           class="portrait-frame closing-photo reveal"
         >
@@ -3233,9 +3373,8 @@
     </section>
 
 
-
     <!-- ===================================================
-         CONFIRMACIÓN GOOGLE FORMS
+         GOOGLE FORMS
     ==================================================== -->
 
     <section
@@ -3320,9 +3459,7 @@
     </section>
 
 
-
   </main>
-
 
 
   <!-- =====================================================
@@ -3349,7 +3486,6 @@
   </footer>
 
 
-
   <!-- =====================================================
        JAVASCRIPT
   ===================================================== -->
@@ -3360,7 +3496,6 @@
     /* =====================================================
        ABRIR INVITACIÓN
     ===================================================== */
-
 
     function abrirInvitacion() {
 
@@ -3383,7 +3518,6 @@
         );
 
 
-
       intro.classList.add(
         "ocultar"
       );
@@ -3400,7 +3534,6 @@
 
       musica.volume =
         0.35;
-
 
 
       musica.play()
@@ -3430,7 +3563,6 @@
         });
 
 
-
       crearPetalos();
 
 
@@ -3447,11 +3579,9 @@
     }
 
 
-
     /* =====================================================
        CONTROL DE MÚSICA
     ===================================================== */
-
 
     function toggleMusic() {
 
@@ -3466,7 +3596,6 @@
         document.getElementById(
           "musicBtn"
         );
-
 
 
       if (
@@ -3507,20 +3636,12 @@
     }
 
 
-
     /* =====================================================
        CUENTA REGRESIVA
+
+       5 SEPTIEMBRE 2026
+       6:30 PM
     ===================================================== */
-
-
-    /*
-      5 DE SEPTIEMBRE DE 2026
-      6:00 PM
-
-      Septiembre = 8
-      porque JavaScript
-      cuenta los meses desde 0.
-    */
 
 
     const fechaEvento =
@@ -3529,10 +3650,9 @@
         8,
         5,
         18,
-        0,
+        30,
         0
       ).getTime();
-
 
 
     function actualizarContador() {
@@ -3544,7 +3664,6 @@
 
       const diferencia =
         fechaEvento - ahora;
-
 
 
       if (
@@ -3582,7 +3701,6 @@
       }
 
 
-
       const dias =
 
         Math.floor(
@@ -3597,7 +3715,6 @@
           )
 
         );
-
 
 
       const horas =
@@ -3627,7 +3744,6 @@
         );
 
 
-
       const minutos =
 
         Math.floor(
@@ -3653,7 +3769,6 @@
         );
 
 
-
       const segundos =
 
         Math.floor(
@@ -3675,7 +3790,6 @@
         );
 
 
-
       document.getElementById(
         "days"
       ).textContent =
@@ -3686,7 +3800,6 @@
           2,
           "0"
         );
-
 
 
       document.getElementById(
@@ -3701,7 +3814,6 @@
         );
 
 
-
       document.getElementById(
         "minutes"
       ).textContent =
@@ -3712,7 +3824,6 @@
           2,
           "0"
         );
-
 
 
       document.getElementById(
@@ -3730,7 +3841,6 @@
     }
 
 
-
     actualizarContador();
 
 
@@ -3740,18 +3850,15 @@
     );
 
 
-
     /* =====================================================
-       ANIMACIONES AL SCROLL
+       ANIMACIONES SCROLL
     ===================================================== */
-
 
     const elementosReveal =
 
       document.querySelectorAll(
         ".reveal"
       );
-
 
 
     const observer =
@@ -3803,7 +3910,6 @@
       );
 
 
-
     elementosReveal.forEach(
 
       elemento => {
@@ -3819,15 +3925,12 @@
     );
 
 
-
     /* =====================================================
        PARTÍCULAS
     ===================================================== */
 
-
     let petalosActivos =
       false;
-
 
 
     function crearPetalos() {
@@ -3844,7 +3947,6 @@
 
       petalosActivos =
         true;
-
 
 
       setInterval(() => {
@@ -3865,13 +3967,11 @@
         }
 
 
-
         const petalo =
 
           document.createElement(
             "div"
           );
-
 
 
         petalo.classList.add(
@@ -3883,7 +3983,6 @@
           "♡";
 
 
-
         petalo.style.left =
 
           (
@@ -3892,7 +3991,6 @@
           )
           +
           "vw";
-
 
 
         petalo.style.fontSize =
@@ -3907,7 +4005,6 @@
           "px";
 
 
-
         petalo.style.animationDuration =
 
           (
@@ -3918,7 +4015,6 @@
           )
           +
           "s";
-
 
 
         petalo.style.color =
@@ -3934,11 +4030,9 @@
           "#c6a56e";
 
 
-
         document.body.appendChild(
           petalo
         );
-
 
 
         setTimeout(() => {
@@ -3948,7 +4042,6 @@
 
 
         }, 11500);
-
 
 
       }, 950);
